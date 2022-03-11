@@ -13,6 +13,4 @@ export const theme = {
   fontWeights,
 };
 
-export interface ThemeType {
-  theme: typeof theme;
-}
+export type ThemeType = typeof theme;

@@ -1,54 +1,53 @@
 import React from "react";
+import { Image, Text } from "react-native";
 import { Card } from "react-native-paper";
-import { Text, View, Image } from "react-native";
-import styled from "styled-components/native";
-import { ThemeType } from "../../../infrastructure/theme";
 import { SvgXml } from "react-native-svg";
-import star from "../../../../assets/star";
+import styled from "styled-components/native";
 import open from "../../../../assets/open";
+import star from "../../../../assets/star";
 import { Spacer } from "../../../components/spacer/spacer.component";
 
-const RestaurantCard = styled(Card)<{ theme: ThemeType }>`
+const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
-const RestaurantCardCover = styled(Card.Cover)<{ theme: ThemeType }>`
+const RestaurantCardCover = styled(Card.Cover)`
   padding: ${(props) => props.theme.space[3]};
   background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
-const Address = styled.Text<ThemeType>`
+const Address = styled.Text`
   font-family: ${(props) => props.theme.fonts.body};
 `;
 
-const Title = styled.Text<ThemeType>`
+const Title = styled.Text`
   font-family: ${(props) => props.theme.fonts.heading};
   font-size: ${(props) => props.theme.fontSizes.body};
   color: ${(props) => props.theme.colors.ui.primary};
 `;
 
-const Info = styled.View<ThemeType>`
+const Info = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-const Rating = styled.View<ThemeType>`
+const Rating = styled.View`
   flex-direction: row;
   padding-top: ${(props) => props.theme.space[2]};
   padding-bottom: ${(props) => props.theme.space[2]};
 `;
 
-const Section = styled.View<ThemeType>`
+const Section = styled.View`
   flex-direction: row;
   align-items: center;
 `;
 
-const SectionEnd = styled.View<ThemeType>`
+const SectionEnd = styled.View`
   flex: 1;
   flex-direction: row;
   justify-content: flex-end;
 `;
 
-const Open = styled(SvgXml)<{ theme: ThemeType }>`
+const Open = styled(SvgXml)`
   flex-direction: row;
 `;
 

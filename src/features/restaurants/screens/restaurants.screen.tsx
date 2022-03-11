@@ -2,7 +2,6 @@ import React from "react";
 import { StatusBar } from "react-native";
 import { Searchbar } from "react-native-paper";
 import styled from "styled-components/native";
-import { ThemeType } from "../../../infrastructure/theme";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 const Container = styled.SafeAreaView`
@@ -10,11 +9,11 @@ const Container = styled.SafeAreaView`
   margin-top: ${StatusBar.currentHeight ?? 0}px;
 `;
 
-const Search = styled.View<ThemeType>`
+const Search = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-const List = styled.View<ThemeType>`
+const List = styled.View`
   flex: 1;
   padding: ${(props) => props.theme.space[3]};
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled, { useTheme } from "styled-components/native";
 import { theme } from "../../infrastructure/theme";
 
@@ -37,21 +37,13 @@ export const Spacer = ({
 }: {
   position: keyof typeof positionVariant;
   size: keyof typeof sizeVariant;
-  children: any;
+  children: ReactNode;
 }) => {
-  // const stateTheme = useTheme();
   useTheme();
   const variant = getVariant(position, size);
 
   return <SpacerView variant={variant}>{children}</SpacerView>;
 };
-
-// export const Spacer = styled.View<{
-//   position: keyof typeof positionVariant;
-//   size: keyof typeof sizeVariant;
-// }>`
-//   ${({ position, size }) => getVariant(position, size)}
-// `;
 
 Spacer.defaultProps = {
   position: "top",
