@@ -26,8 +26,8 @@ const getVariant = (
   return `${property}:${value}`;
 };
 
-const SpacerView = styled.View<{ variant: string }>`
-  ${({ variant }) => variant};
+const SpacerView = styled.View`
+  ${({ variant }: { variant: string }) => variant};
 `;
 
 export const Spacer = ({

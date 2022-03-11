@@ -39,7 +39,7 @@ const variants = {
   caption,
   error,
   hint,
-} ;
+};
 
 export const Text = styled.Text<{ variant: keyof typeof variants }>`
   ${({ theme }) => defaultTextStyles(theme)}
