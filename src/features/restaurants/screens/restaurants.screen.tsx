@@ -6,59 +6,34 @@ import {
   Restaurant,
   RestaurantInfoCard,
 } from "../components/restaurant-info-card.component";
+import { data } from "./data";
 
-const Container = styled.SafeAreaView`
+const SafeArea = styled.SafeAreaView`
   flex: 1;
   margin-top: ${StatusBar.currentHeight ?? 0}px;
 `;
 
-const Search = styled.View`
+const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-const List = styled.View`
-  flex: 1;
-`;
+const RestaurantList = styled(FlatList).attrs<FlatList<Restaurant>, any>({
+  contentContainerStyle: { padding: 16 },
+})``;
 
-export const RestaurantScreen = () => (
-  <Container>
-    <Search>
+export const RestaurantsScreen = () => (
+  <SafeArea>
+    <SearchContainer>
       {/* @ts-ignore  */}
       <Searchbar />
-    </Search>
-    <List>
-      <FlatList
-        data={[
-          {
-            name: "Some Restaurant",
-            icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-            photos: [
-              "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
-            ],
-            address: "100 some random street",
-            isOpenNow: true,
-            rating: 4,
-            isClosedTemporarily: true,
-          },
-        ]}
-        renderItem={() => (
-          <RestaurantInfoCard
-            restaurant={{
-              name: "Some Restaurant",
-              icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-              photos: [
-                "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
-              ],
-              address: "100 some random street",
-              isOpenNow: true,
-              rating: 4,
-              isClosedTemporarily: true,
-            }}
-          />
-        )}
-        contentContainerStyle={{ padding: 16 }}
-        keyExtractor={(item: Restaurant) => item.name}
-      />
-    </List>
-  </Container>
+    </SearchContainer>
+
+    <RestaurantList
+      keyExtractor={(item: Restaurant) => item.name}
+      data={data}
+      renderItem={({ item }: { item: Restaurant }) => (
+        <RestaurantInfoCard restaurant={item} />
+      )}
+    />
+  </SafeArea>
 );
