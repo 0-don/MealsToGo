@@ -19,3 +19,69 @@ export const mockImages = [
   "https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table-600x400.jpg",
   "https://www.foodiesfeed.com/wp-content/uploads/2019/02/pizza-ready-for-baking-600x400.jpg",
 ];
+
+export interface Location {
+  lat: number;
+  lng: number;
+}
+
+export interface Northeast {
+  lat: number;
+  lng: number;
+}
+
+export interface Southwest {
+  lat: number;
+  lng: number;
+}
+
+export interface Viewport {
+  northeast: Northeast;
+  southwest: Southwest;
+}
+
+export interface Geometry {
+  location: Location;
+  viewport: Viewport;
+}
+
+export interface OpeningHours {
+  openNow: boolean;
+}
+
+export interface Photo {
+  height: number;
+  htmlAttributions: string[];
+  photoReference: string;
+  width: number;
+}
+
+export interface PlusCode {
+  compoundCode: string;
+  globalCode: string;
+}
+
+export interface Result {
+  businessStatus: string;
+  geometry: Geometry;
+  icon: string;
+  name: string;
+  openingHours: OpeningHours;
+  photos: Photo[];
+  placeId: string;
+  rating: number;
+  reference: string;
+  userRatingsTotal: number;
+  vicinity: string;
+  plusCode: PlusCode;
+  scope: string;
+  types: string[];
+  priceLevel?: number;
+}
+
+export interface MapsSearch {
+  htmlAttributions: any[];
+  nextPageToken: string;
+  results: Result[];
+  status: string;
+}
