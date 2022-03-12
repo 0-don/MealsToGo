@@ -20,6 +20,8 @@ import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurant
 import { SafeArea } from "./src/components/utility/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";
 
+import "./src/services/restaurants/restaurant.service"
+
 const Tab = createBottomTabNavigator();
 
 export type TabIcon = {
@@ -64,6 +66,7 @@ const createScreenOptions = ({ route }: ScreenOption) => ({
   ),
   tabBarActiveTintColor: "tomato",
   tabBarInactiveTintColor: "gray",
+  headerShown: false,
 });
 
 export default function App() {
