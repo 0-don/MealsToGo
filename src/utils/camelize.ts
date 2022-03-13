@@ -1,12 +1,20 @@
 export default function camilaze(obj: any) {
-  if (typeof obj === "string") return camelCase(obj);
+  if (typeof obj === "string") {
+    return camelCase(obj);
+  }
   return walk(obj);
 }
 
 function walk(obj: { [x: string]: any }) {
-  if (!obj || typeof obj !== "object") return obj;
-  if (isDate(obj) || isRegex(obj)) return obj;
-  if (isArray(obj)) return map(obj, walk);
+  if (!obj || typeof obj !== "object") {
+    return obj;
+  }
+  if (isDate(obj) || isRegex(obj)) {
+    return obj;
+  }
+  if (isArray(obj)) {
+    return map(obj, walk);
+  }
   return reduce(
     objectKeys(obj),
     function (acc: { [x: string]: any }, key: string) {
@@ -44,7 +52,9 @@ const objectKeys =
   function (obj) {
     const keys = [];
     for (const key in obj) {
-      if (has.call(obj, key)) keys.push(key);
+      if (has.call(obj, key)) {
+        keys.push(key);
+      }
     }
     return keys;
   };
@@ -53,7 +63,9 @@ function map(
   xs: any[],
   f: { (obj: any): any; (arg0: any, arg1: number): any }
 ) {
-  if (xs.map) return xs.map(f);
+  if (xs.map) {
+    return xs.map(f);
+  }
   const res = [];
   for (let i = 0; i < xs.length; i++) {
     res.push(f(xs[i], i));
@@ -66,7 +78,9 @@ function reduce(
   f: { (acc: any, key: any): any; (arg0: any, arg1: any, arg2: number): any },
   acc: {}
 ) {
-  if (xs.reduce) return xs.reduce(f, acc);
+  if (xs.reduce) {
+    return xs.reduce(f, acc);
+  }
   for (let i = 0; i < xs.length; i++) {
     acc = f(acc, xs[i], i);
   }

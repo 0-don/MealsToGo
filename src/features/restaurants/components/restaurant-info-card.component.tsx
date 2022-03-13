@@ -30,7 +30,7 @@ export const RestaurantInfoCard: React.FC<{ restaurant: RestaurantProps }> = ({
     isClosedTemporarily,
   } = restaurant;
 
-  const ratingArray = Array.from(new Array(Math.floor(rating)));
+  const ratingArray = Array.from(new Array(Math.floor(rating ?? 4)));
 
   return (
     <RestaurantCard elevation={5}>

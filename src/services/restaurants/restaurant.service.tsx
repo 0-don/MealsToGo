@@ -5,11 +5,11 @@ import { MockProps, RestaurantProps } from "./types";
 // type valueof<T> = T[keyof T]; // : Promise<valueof<typeof mocks>>
 
 export const restaurantRequest = (
-  location: keyof typeof mocks = "37.7749295,-122.4194155"
+  location: string = "37.7749295,-122.4194155"
 ): Promise<MockProps> =>
   new Promise((resolve, reject) =>
-    mocks[location]
-      ? resolve(mocks[location] as unknown as MockProps)
+    mocks[location as keyof typeof mocks]
+      ? resolve(mocks[location as keyof typeof mocks] as unknown as MockProps)
       : reject("Not found")
   );
 
