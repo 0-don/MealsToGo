@@ -1,8 +1,14 @@
+import { StackNavigationProp } from "@react-navigation/stack";
 import React, { useContext } from "react";
-import { FlatList, StatusBar } from "react-native";
+import { FlatList, Pressable, StatusBar } from "react-native";
+import {
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from "react-native-gesture-handler";
 import { ActivityIndicator, Colors } from "react-native-paper";
 import styled from "styled-components/native";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { RootStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { RestaurantProps } from "../../../services/restaurants/types";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
@@ -31,7 +37,18 @@ const LoadingContainer = styled.View`
   left: 50%;
 `;
 
-export const RestaurantsScreen = () => {
+type RestaurantsScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  "RestaurantsView"
+>;
+
+type RestaurantsScreenProps = {
+  navigation: RestaurantsScreenNavigationProp;
+};
+
+export const RestaurantsScreen = ({
+  navigation,
+}: RestaurantsScreenProps): JSX.Element => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
 
   return (
@@ -42,18 +59,23 @@ export const RestaurantsScreen = () => {
         </LoadingContainer>
       )}
       <Search />
-      {restaurants.length > 0 && (
-        <RestaurantList
-          // @ts-ignore
-          keyExtractor={(item: RestaurantProps) => item.name}
-          data={restaurants}
-          renderItem={({ item }: { item: RestaurantProps }) => (
+
+      <RestaurantList
+        // @ts-ignore
+        keyExtractor={(item: RestaurantProps) => item.name}
+        data={restaurants}
+        renderItem={({ item }: { item: RestaurantProps }) => (
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("RestaurantDetail", { restaurant: item })
+            }
+          >
             <Spacer position="bottom" size="large">
               <RestaurantInfoCard restaurant={item} />
             </Spacer>
-          )}
-        />
-      )}
+          </TouchableOpacity>
+        )}
+      />
     </SafeArea>
   );
 };
