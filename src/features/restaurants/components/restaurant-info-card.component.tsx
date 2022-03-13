@@ -4,6 +4,7 @@ import open from "../../../../assets/open";
 import star from "../../../../assets/star";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
+import { RestaurantProps } from "../../../services/restaurants/types";
 import {
   Address,
   Icon,
@@ -16,17 +17,7 @@ import {
   SectionEnd,
 } from "./restaurant-info-card.style";
 
-export type Restaurant = {
-  name: string;
-  icon: string;
-  photos: string[];
-  address: string;
-  isOpenNow: boolean;
-  rating: number;
-  isClosedTemporarily: boolean;
-};
-
-export const RestaurantInfoCard: React.FC<{ restaurant: Restaurant }> = ({
+export const RestaurantInfoCard: React.FC<{ restaurant: RestaurantProps }> = ({
   restaurant,
 }) => {
   const {

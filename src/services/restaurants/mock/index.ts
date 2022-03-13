@@ -67,7 +67,7 @@ export interface Result {
   icon: string;
   name: string;
   openingHours: OpeningHours;
-  photos: Photo[];
+  photos: string[];
   placeId: string;
   rating: number;
   reference: string;
