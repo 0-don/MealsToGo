@@ -1,29 +1,24 @@
 import React, {
-  useState,
-  createContext,
-  useEffect,
-  useMemo,
-  useContext,
+  createContext, useContext, useEffect, useState
 } from "react";
 import { LocationContext } from "../location/location.context";
-import { Result } from "./mock";
 import { restaurantRequest, restaurantsTransform } from "./restaurant.service";
 import { RestaurantProps } from "./types";
 
-export const RestaurantsContext = createContext<{
+type RestaurantsContextData = {
   restaurants: RestaurantProps[];
   isLoading: boolean;
-  error: string | null;
-}>({
-  restaurants: [],
-  isLoading: false,
-  error: "",
-});
+  error: string;
+};
+
+export const RestaurantsContext = createContext<RestaurantsContextData>(
+  {} as RestaurantsContextData
+);
 
 export const RestaurantsContextProvider: React.FC = ({ children }) => {
   const [restaurants, setRestaurants] = useState<RestaurantProps[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const { location } = useContext(LocationContext);
 
   const retrieveRestaurants = (locationString: string) => {

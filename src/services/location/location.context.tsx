@@ -6,32 +6,20 @@ import {
 } from "./location.service";
 
 interface LocationContextData {
-  location:
-    | {
-        lat: number;
-        lng: number;
-      }
-    | undefined;
+  location: LocationProps;
   isLoading: boolean;
   error: null;
   search: (searchKeyword?: string) => void;
   keyword: string;
 }
 
-export const LocationContext = React.createContext<LocationContextData>({
-  isLoading: false,
-  error: null,
-  location: undefined,
-  keyword: "",
-  search: () => {},
-});
+export const LocationContext = React.createContext<LocationContextData>(
+  {} as LocationContextData
+);
 
 export const LocationContextProvider: React.FC = ({ children }) => {
   const [keyword, setKeyword] = useState("san francisco");
-  const [location, setLocation] = useState<{
-    lat: number;
-    lng: number;
-  }>();
+  const [location, setLocation] = useState<LocationProps>({} as LocationProps);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -56,7 +44,7 @@ export const LocationContextProvider: React.FC = ({ children }) => {
       });
   }, [keyword]);
 
-  useEffect(() => {}, [])
+  useEffect(() => {}, []);
   return (
     <LocationContext.Provider
       value={{
