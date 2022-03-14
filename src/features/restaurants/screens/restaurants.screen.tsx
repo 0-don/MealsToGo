@@ -9,6 +9,7 @@ import { ActivityIndicator, Colors } from "react-native-paper";
 import styled from "styled-components/native";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { RootStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
+import { FavouritesContext } from "../../../services/favorites/favourites.context";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { RestaurantProps } from "../../../services/restaurants/types";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
@@ -50,6 +51,7 @@ export const RestaurantsScreen = ({
   navigation,
 }: RestaurantsScreenProps): JSX.Element => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+  const { favorites } = useContext(FavouritesContext);
 
   return (
     <SafeArea>

@@ -7,13 +7,27 @@ import { RestaurantsContext } from "../../../services/restaurants/restaurants.co
 
 import { Search } from "../components/search.component";
 import { MapCallout } from "../components/map-callout.component";
+import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
+import { CompositeNavigationProp } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootBottomParamList } from "../../../infrastructure/navigation/app.navigator";
+import { RootStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
 
 const Map = styled(MapView)`
   height: 100%;
   width: 100%;
 `;
 
-export const MapScreen = () => {
+type MapScreenNavigationProp = CompositeNavigationProp<
+  BottomTabNavigationProp<RootBottomParamList, "Map">,
+  StackNavigationProp<RootStackParamList>
+>;
+
+type Props = {
+  navigation: MapScreenNavigationProp;
+};
+
+export const MapScreen = ({ navigation }: Props) => {
   const { location } = useContext(LocationContext);
   const { restaurants = [] } = useContext(RestaurantsContext);
 
@@ -49,7 +63,11 @@ export const MapScreen = () => {
                 longitude: restaurant.geometry.location.lng,
               }}
             >
-              <Callout>
+              <Callout
+                onPress={() =>
+                  navigation.navigate("RestaurantDetail", { restaurant })
+                }
+              >
                 <MapCallout restaurant={restaurant} />
               </Callout>
             </Marker>
