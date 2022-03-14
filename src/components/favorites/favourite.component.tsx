@@ -4,12 +4,13 @@ import { AntDesign } from "@expo/vector-icons";
 import * as S from "./favourite.styles";
 import { useFavorite } from "../../services/favorites/favourites.context";
 import { RestaurantProps } from "../../services/restaurants/types";
+import { Platform } from "react-native";
 
 type FavouriteProps = {
   restaurant: RestaurantProps;
 };
 
-const Favourite = ({ restaurant }: FavouriteProps): JSX.Element => {
+export const Favourite = ({ restaurant }: FavouriteProps): JSX.Element => {
   const { favourites, addToFavourites, removeFromFavourites } = useFavorite();
 
   const isFavourite = useMemo(() => {
@@ -23,6 +24,7 @@ const Favourite = ({ restaurant }: FavouriteProps): JSX.Element => {
           ? addToFavourites(restaurant)
           : removeFromFavourites(restaurant)
       }
+      style={{ elevation: Platform.OS === "android" ? 50 : 0 }}
     >
       <AntDesign
         name={isFavourite ? "heart" : "hearto"}
@@ -32,5 +34,3 @@ const Favourite = ({ restaurant }: FavouriteProps): JSX.Element => {
     </S.FavouriteButton>
   );
 };
-
-export default Favourite;

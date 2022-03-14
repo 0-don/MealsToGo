@@ -1,7 +1,9 @@
 import React from "react";
+import { View } from "react-native";
 import { SvgXml } from "react-native-svg";
 import open from "../../../../assets/open";
 import star from "../../../../assets/star";
+import { Favourite } from "../../../components/favorites/favourite.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import { RestaurantProps } from "../../../services/restaurants/types";
@@ -33,8 +35,9 @@ export const RestaurantInfoCard: React.FC<{ restaurant: RestaurantProps }> = ({
   const ratingArray = Array.from(new Array(Math.floor(rating ?? 4)));
 
   return (
-    <RestaurantCard elevation={5}>
+    <RestaurantCard elevation={2}>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
+      <Favourite restaurant={restaurant} />
       <Info>
         <Text variant="label">{name}</Text>
         <Section>
