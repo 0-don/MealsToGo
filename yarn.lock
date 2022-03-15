@@ -4062,7 +4062,7 @@ find-up@^5.0.0, find-up@~5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
-firebase@^9.6.8:
+firebase@^9.6.7:
   version "9.6.8"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-9.6.8.tgz#9a2da35ff97f89813306bdc504b0d302b40d1558"
   integrity sha512-a/RcgiqK9L5d/ZKpHZ21c3x/KKIo2XwXp2droukbBTuaX0Md8ppHQWYlSqLmWIDR0y2zwN17lrfNVsE6f+4ncA==

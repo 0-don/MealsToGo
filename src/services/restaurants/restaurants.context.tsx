@@ -1,6 +1,4 @@
-import React, {
-  createContext, useContext, useEffect, useState
-} from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { LocationContext } from "../location/location.context";
 import { restaurantRequest, restaurantsTransform } from "./restaurant.service";
 import { RestaurantProps } from "./types";
@@ -41,7 +39,7 @@ export const RestaurantsContextProvider: React.FC = ({ children }) => {
   useEffect(() => {
     if (location) {
       const locationString = `${location?.lat},${location?.lng}`;
-      console.log(locationString);
+
       retrieveRestaurants(locationString);
     }
   }, [location]);

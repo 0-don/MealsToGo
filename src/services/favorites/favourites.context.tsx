@@ -27,18 +27,20 @@ export const FavouritesContextProvider = ({ children }: Props): JSX.Element => {
 
   const [favourites, setFavourites] = useState<Favorites[]>([]);
 
-  const saveFavourites = async (value: Favorites[], uid: string) => {
+  const saveFavourites = async (value: Favorites[]) => {
     try {
       const jsonValue = JSON.stringify(value);
-      await AsyncStorage.setItem(`${STORAGE_FAVOURITES}-${uid}`, jsonValue);
+      await AsyncStorage.setItem(`${STORAGE_FAVOURITES}`, jsonValue);
+      // await AsyncStorage.setItem(`${STORAGE_FAVOURITES}-${uid}`, jsonValue);
     } catch (e) {
       console.error("error storing", e);
     }
   };
 
-  const loadFavourites = async (uid: string) => {
+  const loadFavourites = async () => {
     try {
-      const value = await AsyncStorage.getItem(`${STORAGE_FAVOURITES}-${uid}`);
+      const value = await AsyncStorage.getItem(`${STORAGE_FAVOURITES}`);
+      // const value = await AsyncStorage.getItem(`${STORAGE_FAVOURITES}-${uid}`);
       if (value !== null) setFavourites(JSON.parse(value));
     } catch (e) {
       console.error("error loading", e);
@@ -56,6 +58,14 @@ export const FavouritesContextProvider = ({ children }: Props): JSX.Element => {
 
     setFavourites(newFavourites);
   };
+
+  useEffect(() => {
+    loadFavourites();
+  }, []);
+
+  useEffect(() => {
+    saveFavourites(favourites);
+  }, [favourites]);
 
   // useEffect(() => {
   //   if (user && user.uid) {
