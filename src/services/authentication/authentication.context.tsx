@@ -51,6 +51,7 @@ export const AuthenticationProvider = ({
 
   const onLogin = useCallback((email: string, password: string): void => {
     setIsLoading(true);
+
     loginRequest(email, password)
       .then(({ user }) => {
         setUser(user);
@@ -95,7 +96,7 @@ export const AuthenticationProvider = ({
   return (
     <AuthenticationContext.Provider
       value={{
-        isAuthenticated: user.displayName ? true : false,
+        isAuthenticated: !!Object.keys(user).length,
         user,
         isLoading,
         error,
@@ -108,4 +109,3 @@ export const AuthenticationProvider = ({
     </AuthenticationContext.Provider>
   );
 };
-

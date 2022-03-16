@@ -22,18 +22,17 @@ export const RestaurantsContextProvider: React.FC = ({ children }) => {
   const retrieveRestaurants = (locationString: string) => {
     setIsLoading(true);
     setRestaurants([]);
-    setTimeout(() => {
-      restaurantRequest(locationString)
-        .then(restaurantsTransform)
-        .then((results) => {
-          setIsLoading(false);
-          setRestaurants(results);
-        })
-        .catch((err) => {
-          setIsLoading(false);
-          setError(err);
-        });
-    }, 2000);
+
+    restaurantRequest(locationString)
+      .then(restaurantsTransform)
+      .then((results) => {
+        setIsLoading(false);
+        setRestaurants(results);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setError(err);
+      });
   };
 
   useEffect(() => {

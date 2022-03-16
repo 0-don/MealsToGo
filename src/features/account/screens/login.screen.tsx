@@ -25,6 +25,7 @@ export const LoginScreen = ({ navigation }: LoginScreenProps): JSX.Element => {
   const [password, setPassword] = useState("");
 
   const handleLogin = useCallback(() => {
+
     onLogin(email, password);
   }, [email, password, onLogin]);
 

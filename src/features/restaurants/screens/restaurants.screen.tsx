@@ -20,6 +20,7 @@ import { Search } from "../components/search.component";
 const SafeArea = styled.SafeAreaView`
   flex: 1;
   margin-top: ${StatusBar.currentHeight ?? 0}px;
+  
 `;
 
 export const RestaurantList = styled(
