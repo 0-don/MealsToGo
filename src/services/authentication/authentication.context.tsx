@@ -1,7 +1,10 @@
-import React, { useState, createContext, useContext, useCallback } from 'react';
-import firebase, { User, auth } from 'firebase';
-
-import { loginRequest } from './authentication.service';
+import {
+  createUserWithEmailAndPassword,
+  User,
+} from "firebase/auth/react-native";
+import React, { createContext, useCallback, useContext, useState } from "react";
+import { auth } from "../../config/firebase";
+import { loginRequest } from "./authentication.service";
 
 export type UserProps = User; // | auth.UserCredential;
 
@@ -15,7 +18,7 @@ type AuthenticationContextData = {
   onRegister: (
     email: string,
     password: string,
-    repeatedPassword: string,
+    repeatedPassword: string
   ) => void;
 };
 
@@ -23,21 +26,21 @@ type AuthenticationProviderProps = {
   children: React.ReactNode;
 };
 
-const AuthenticationContext = createContext<AuthenticationContextData>(
-  {} as AuthenticationContextData,
+export const AuthenticationContext = createContext<AuthenticationContextData>(
+  {} as AuthenticationContextData
 );
 
 export const AuthenticationProvider = ({
   children,
 }: AuthenticationProviderProps): JSX.Element => {
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   /* const [user, setUser] = useState<firebase.auth.UserCredential>(
     {} as firebase.auth.UserCredential,
   ); */
   const [user, setUser] = useState<UserProps>({} as UserProps);
 
-  firebase.auth().onAuthStateChanged(usr => {
+  auth.onAuthStateChanged((usr) => {
     if (usr) {
       setUser(usr);
       setIsLoading(false);
@@ -49,12 +52,12 @@ export const AuthenticationProvider = ({
   const onLogin = useCallback((email: string, password: string): void => {
     setIsLoading(true);
     loginRequest(email, password)
-      .then(u => {
-        setUser(u);
-        setError('');
+      .then(({ user }) => {
+        setUser(user);
+        setError("");
         setIsLoading(false);
       })
-      .catch(e => {
+      .catch((e) => {
         setIsLoading(false);
         setError(e.toString());
       });
@@ -63,40 +66,36 @@ export const AuthenticationProvider = ({
   const onRegister = (
     email: string,
     password: string,
-    repeatedPassword: string,
+    repeatedPassword: string
   ): void => {
     if (password !== repeatedPassword) {
-      setError('Error: Passwords do not match');
+      setError("Error: Passwords do not match");
       return;
     }
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(u => {
-        setUser(u);
-        setError('');
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(({ user }) => {
+        setUser(user);
+        setError("");
         setIsLoading(false);
       })
-      .catch(e => {
+      .catch((e) => {
         setIsLoading(false);
         setError(e.toString());
       });
   };
 
   const onLogout = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        setUser({} as UserProps);
-        setError('');
-      });
+    auth.signOut().then(() => {
+      setUser({} as UserProps);
+      setError("");
+    });
   };
 
   return (
     <AuthenticationContext.Provider
       value={{
-        isAuthenticated: !!user,
+        isAuthenticated: user.displayName ? true : false,
         user,
         isLoading,
         error,
@@ -110,11 +109,3 @@ export const AuthenticationProvider = ({
   );
 };
 
-export function useAuth(): AuthenticationContextData {
-  const context = useContext(AuthenticationContext);
-
-  if (!context)
-    throw new Error('useAuth must be used within an AuthenticationProvider');
-
-  return context;
-}

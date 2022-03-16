@@ -1,7 +1,9 @@
-import * as firebase from 'firebase';
+import { signInWithEmailAndPassword, UserCredential } from "firebase/auth/react-native";
+import { auth } from "../../config/firebase";
+
 
 export const loginRequest = (
   email: string,
   password: string,
-): Promise<firebase.auth.UserCredential> =>
-  firebase.auth().signInWithEmailAndPassword(email, password);
+): Promise<UserCredential> =>
+  signInWithEmailAndPassword(auth, email, password);
