@@ -7,6 +7,7 @@ import {
 } from "react-native-gesture-handler";
 import { ActivityIndicator, Colors } from "react-native-paper";
 import styled from "styled-components/native";
+import FadeInView from "../../../components/animations/fade.animation";
 import { Favourite } from "../../../components/favorites/favourite.component";
 import FavouritesBar from "../../../components/favorites/favouriteBar";
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -20,7 +21,6 @@ import { Search } from "../components/search.component";
 const SafeArea = styled.SafeAreaView`
   flex: 1;
   margin-top: ${StatusBar.currentHeight ?? 0}px;
-  
 `;
 
 export const RestaurantList = styled(
@@ -83,7 +83,7 @@ export const RestaurantsScreen = ({
         keyExtractor={(item: RestaurantProps) => item.name}
         data={restaurants}
         renderItem={({ item }: { item: RestaurantProps }) => (
-          <>
+          <FadeInView>
             <Favourite restaurant={item} />
             <TouchableOpacity
               onPress={() =>
@@ -94,7 +94,7 @@ export const RestaurantsScreen = ({
                 <RestaurantInfoCard restaurant={item} />
               </Spacer>
             </TouchableOpacity>
-          </>
+          </FadeInView>
         )}
       />
     </SafeArea>

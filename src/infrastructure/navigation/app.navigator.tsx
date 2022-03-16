@@ -10,7 +10,7 @@ import { RestaurantsNavigator } from "./restaurants.navigator";
 import { SettingsNavigator } from "./settings.navigator";
 
 export type TabIcon = {
-  [key in "Restaurants" | "Map" | "Settings"]: keyof typeof Ionicons.glyphMap;
+  [key in "Restaurants" | "Map" | "Setting"]: keyof typeof Ionicons.glyphMap;
 };
 
 export type TabIconColor = {
@@ -26,7 +26,7 @@ export type ScreenOption = {
 export type RootBottomParamList = {
   Restaurants: undefined;
   Map: undefined;
-  Settings: undefined;
+  Setting: undefined;
   Checkout: undefined;
 };
 
@@ -35,7 +35,7 @@ const Tab = createBottomTabNavigator();
 const TAB_ICON: TabIcon = {
   Restaurants: "md-restaurant",
   Map: "md-map",
-  Settings: "md-settings",
+  Setting: "md-settings",
 };
 
 const createScreenOptions = ({ route }: ScreenOption) => ({
@@ -59,7 +59,7 @@ export const AppNavigator = () => {
           <Tab.Navigator screenOptions={createScreenOptions}>
             <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
             <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Settings" component={SettingsNavigator} />
+            <Tab.Screen name="Setting" component={SettingsNavigator} />
           </Tab.Navigator>
         </RestaurantsContextProvider>
       </LocationContextProvider>
