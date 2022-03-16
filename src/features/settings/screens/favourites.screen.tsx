@@ -1,25 +1,24 @@
-import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import { CompositeNavigationProp } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import React, { useContext } from "react";
+import { TouchableOpacity } from "react-native";
+import { CompositeNavigationProp } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
-import { useFavorite } from 'services/favourites/favourites.context';
-import { RestaurantProps } from 'services/restaurants/types';
-import { RootStackParamList as RestaurantsStackParamList } from 'infrastructure/navigation/restaurants.navigator';
-import { RootStackParamList as SettingsStackParamList } from 'infrastructure/navigation/settings.navigator';
+import { RootStackParamList as RestaurantsStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
+import { RootStackParamList as SettingsStackParamList } from "../../../infrastructure/navigation/settings.navigator";
 
-import SafeArea from 'components/utility/safe-area.components';
-import Text from 'components/typography/text.component';
-import Spacer from 'components/spacer/spacer.component';
+import { Text } from "../../../components/typography/text.component";
 
-import RestaurantInfoCard from '../../restaurants/components/restaurant-info-card.component';
-
-import * as S from './favourites.styles';
+import * as S from "./favourites.styles";
+import { FavouritesContext } from "../../../services/favorites/favourites.context";
+import { Spacer } from "../../../components/spacer/spacer.component";
+import { SafeArea } from "../../../components/utility/safe-area.component";
+import { RestaurantProps } from "../../../services/restaurants/types";
+import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
 
 type Favorites = RestaurantProps;
 
 type FavouritesScreenNavigationProp = CompositeNavigationProp<
-  StackNavigationProp<SettingsStackParamList, 'Favourites'>,
+  StackNavigationProp<SettingsStackParamList, "Favourites">,
   StackNavigationProp<RestaurantsStackParamList>
 >;
 
@@ -27,10 +26,10 @@ type FavouritesScreenProps = {
   navigation: FavouritesScreenNavigationProp;
 };
 
-const FavouritesScreen = ({
+export const FavouritesScreen = ({
   navigation,
 }: FavouritesScreenProps): JSX.Element => {
-  const { favourites } = useFavorite();
+  const { favourites } = useContext(FavouritesContext);
 
   const keyExtractor = (item: Favorites) => item.name;
 
@@ -38,7 +37,7 @@ const FavouritesScreen = ({
     return (
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate('RestaurantDetail', {
+          navigation.navigate("RestaurantDetail", {
             restaurant,
           })
         }
@@ -53,6 +52,7 @@ const FavouritesScreen = ({
   return favourites.length ? (
     <SafeArea>
       <S.RestaurantList
+        // @ts-ignore
         data={favourites}
         keyExtractor={keyExtractor}
         renderItem={renderItem}
@@ -64,5 +64,3 @@ const FavouritesScreen = ({
     </S.NoFavouritesArea>
   );
 };
-
-export default FavouritesScreen;

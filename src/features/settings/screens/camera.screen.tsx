@@ -1,27 +1,28 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { View, TouchableOpacity } from 'react-native';
-import { Camera } from 'expo-camera';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { StackNavigationProp } from '@react-navigation/stack';
+import React, { useRef, useState, useEffect, useContext } from "react";
+import { View, TouchableOpacity } from "react-native";
+import { Camera } from "expo-camera";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { StackNavigationProp } from "@react-navigation/stack";
 
-import { useAuth } from 'services/authentication/authentication.context';
-import { RootStackParamList } from 'infrastructure/navigation/settings.navigator';
+import { Text } from "../../../components/typography/text.component";
 
-import Text from 'components/typography/text.component';
-
-import * as S from './camera.styles';
+import * as S from "./camera.styles";
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import { RootStackParamList } from "../../../infrastructure/navigation/settings.navigator";
 
 type SettingsScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
-  'Camera'
+  "Camera"
 >;
 
 type SettingsScreenProps = {
   navigation: SettingsScreenNavigationProp;
 };
 
-const CameraScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
-  const { user } = useAuth();
+export const CameraScreen = ({
+  navigation,
+}: SettingsScreenProps): JSX.Element => {
+  const { user } = useContext(AuthenticationContext);
 
   const cameraRef = useRef<Camera | null>(null);
 
@@ -38,7 +39,7 @@ const CameraScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
   useEffect(() => {
     (async () => {
       const { status } = await Camera.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
+      setHasPermission(status === "granted");
     })();
   }, []);
 
@@ -61,5 +62,3 @@ const CameraScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
     </S.ProfileCamera>
   );
 };
-
-export default CameraScreen;

@@ -1,35 +1,30 @@
-import React, { useState, useCallback } from 'react';
-import { TouchableOpacity } from 'react-native';
-import { List, Avatar } from 'react-native-paper';
-import { StackNavigationProp } from '@react-navigation/stack';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useFocusEffect } from '@react-navigation/native';
+import React, { useState, useCallback, useContext } from "react";
+import { TouchableOpacity } from "react-native";
+import { List, Avatar } from "react-native-paper";
+import { StackNavigationProp } from "@react-navigation/stack";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 
-import {
-  useAuth,
-  UserProps,
-} from 'services/authentication/authentication.context';
-import { RootStackParamList } from 'infrastructure/navigation/settings.navigator';
+import { Text } from "../../../components/typography/text.component";
 
-import theme from 'infrastructure/theme';
-
-import Text from 'components/typography/text.component';
-import Spacer from 'components/spacer/spacer.component';
-
-import * as S from './settings.styles';
+import * as S from "./settings.styles";
+import { AuthenticationContext, UserProps } from "../../../services/authentication/authentication.context";
+import { theme } from "../../../infrastructure/theme";
+import { Spacer } from "../../../components/spacer/spacer.component";
+import { RootStackParamList } from "../../../infrastructure/navigation/settings.navigator";
 
 type SettingsScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
-  'Settings'
+  "Settings"
 >;
 
 type SettingsScreenProps = {
   navigation: SettingsScreenNavigationProp;
 };
 
-const SettingsScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
-  const { user, onLogout } = useAuth();
-  const [photo, setPhoto] = useState('');
+export const SettingsScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
+  const { user, onLogout } = useContext(AuthenticationContext);
+  const [photo, setPhoto] = useState("");
 
   const getProfilePicture = async (currentUser: UserProps) => {
     const photoUri = await AsyncStorage.getItem(`${currentUser.uid}-photo`);
@@ -39,14 +34,14 @@ const SettingsScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
   useFocusEffect(
     useCallback(() => {
       getProfilePicture(user);
-    }, [user]),
+    }, [user])
   );
 
   return (
     <S.SettingsBackground>
       <S.TransparentSafeArea>
         <S.AvatarContainer>
-          <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
+          <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
             {!photo && (
               <Avatar.Icon
                 size={180}
@@ -71,18 +66,18 @@ const SettingsScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
           <S.SettingsItem
             title="Favourites"
             description="View your favourites"
-            left={props => (
+            left={(props) => (
               <List.Icon
                 {...props}
                 color={theme.colors.ui.error}
                 icon="heart"
               />
             )}
-            onPress={() => navigation.navigate('Favourites')}
+            onPress={() => navigation.navigate("Favourites")}
           />
           <S.SettingsItem
             title="Payment"
-            left={props => (
+            left={(props) => (
               <List.Icon
                 {...props}
                 color={theme.colors.ui.secondary}
@@ -93,7 +88,7 @@ const SettingsScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
           />
           <S.SettingsItem
             title="Past Orders"
-            left={props => (
+            left={(props) => (
               <List.Icon
                 {...props}
                 color={theme.colors.ui.secondary}
@@ -104,7 +99,7 @@ const SettingsScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
           />
           <S.SettingsItem
             title="Logout"
-            left={props => (
+            left={(props) => (
               <List.Icon
                 {...props}
                 color={theme.colors.ui.secondary}
@@ -119,4 +114,4 @@ const SettingsScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
   );
 };
 
-export default SettingsScreen;
+

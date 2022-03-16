@@ -1,19 +1,13 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import {
-  NavigationContainer,
-  ParamListBase,
-  RouteProp,
-} from "@react-navigation/native";
-import React from "react";
-import { Text } from "react-native";
-import { SafeArea } from "../../components/utility/safe-area.component";
-import { RestaurantsScreen } from "../../features/restaurants/screens/restaurants.screen";
 import { Ionicons } from "@expo/vector-icons";
-import { RestaurantsNavigator } from "./restaurants.navigator";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { ParamListBase, RouteProp } from "@react-navigation/native";
+import React from "react";
 import { MapScreen } from "../../features/map/screens/map.screen";
 import { FavouritesContextProvider } from "../../services/favorites/favourites.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
+import { RestaurantsNavigator } from "./restaurants.navigator";
+import { SettingsNavigator } from "./settings.navigator";
 
 export type TabIcon = {
   [key in "Restaurants" | "Map" | "Settings"]: keyof typeof Ionicons.glyphMap;
@@ -37,17 +31,6 @@ export type RootBottomParamList = {
 };
 
 const Tab = createBottomTabNavigator();
-
-const Settings = () => (
-  <SafeArea>
-    <Text>Settings</Text>
-  </SafeArea>
-);
-const Map = () => (
-  <SafeArea>
-    <Text>Map</Text>
-  </SafeArea>
-);
 
 const TAB_ICON: TabIcon = {
   Restaurants: "md-restaurant",
@@ -76,7 +59,7 @@ export const AppNavigator = () => {
           <Tab.Navigator screenOptions={createScreenOptions}>
             <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
             <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Settings" component={Settings} />
+            <Tab.Screen name="Settings" component={SettingsNavigator} />
           </Tab.Navigator>
         </RestaurantsContextProvider>
       </LocationContextProvider>
