@@ -4,7 +4,7 @@ import LottieView from "lottie-react-native";
 
 import lottie from "../../../../assets/watermelon.json";
 import { Spacer } from "../../../components/spacer/spacer.component";
-import * as S from "../../components/account.styles";
+import * as S from "../components/account.styles";
 import { RootStackParamList } from "../../../infrastructure/navigation/account.navigator";
 
 type AccountScreenNavigationProp = StackNavigationProp<
@@ -16,7 +16,9 @@ type AccountScreenProps = {
   navigation: AccountScreenNavigationProp;
 };
 
-const AccountScreen = ({ navigation }: AccountScreenProps): JSX.Element => {
+export const AccountScreen = ({
+  navigation,
+}: AccountScreenProps): JSX.Element => {
   return (
     <S.AccountBackground>
       <S.AccountCover />
@@ -26,7 +28,7 @@ const AccountScreen = ({ navigation }: AccountScreenProps): JSX.Element => {
           autoPlay
           loop
           resizeMode="cover"
-          source={JSON.stringify(lottie)}
+          source={lottie as unknown as string}
         />
       </S.AnimationWrapper>
       <S.Title>Meals To Go</S.Title>
@@ -51,5 +53,3 @@ const AccountScreen = ({ navigation }: AccountScreenProps): JSX.Element => {
     </S.AccountBackground>
   );
 };
-
-export default AccountScreen;

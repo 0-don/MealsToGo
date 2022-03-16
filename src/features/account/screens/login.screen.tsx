@@ -5,7 +5,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 
-import * as S from "../../components/account.styles";
+import * as S from "../components/account.styles";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { RootStackParamList } from "../../../infrastructure/navigation/account.navigator";
 
@@ -18,7 +18,7 @@ type LoginScreenProps = {
   navigation: LoginScreenNavigationProp;
 };
 
-const LoginScreen = ({ navigation }: LoginScreenProps): JSX.Element => {
+export const LoginScreen = ({ navigation }: LoginScreenProps): JSX.Element => {
   const { onLogin, error, isLoading } = useContext(AuthenticationContext);
 
   const [email, setEmail] = useState("");
@@ -80,5 +80,3 @@ const LoginScreen = ({ navigation }: LoginScreenProps): JSX.Element => {
     </S.AccountBackground>
   );
 };
-
-export default LoginScreen;

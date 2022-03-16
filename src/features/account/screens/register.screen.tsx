@@ -4,11 +4,8 @@ import { ActivityIndicator, Colors } from "react-native-paper";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import { RootStackParamList } from "../../../infrastructure/navigation/account.navigator";
-import {
-  AuthenticationContext
-} from "../../../services/authentication/authentication.context";
-import * as S from "../../components/account.styles";
-
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import * as S from "../components/account.styles";
 
 type RegisterScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -19,7 +16,9 @@ type RegisterScreenProps = {
   navigation: RegisterScreenNavigationProp;
 };
 
-const RegisterScreen = ({ navigation }: RegisterScreenProps): JSX.Element => {
+export const RegisterScreen = ({
+  navigation,
+}: RegisterScreenProps): JSX.Element => {
   const { onRegister, error, isLoading } = useContext(AuthenticationContext);
 
   const [email, setEmail] = useState("");
@@ -37,6 +36,7 @@ const RegisterScreen = ({ navigation }: RegisterScreenProps): JSX.Element => {
           textContentType="emailAddress"
           keyboardType="email-address"
           autoCapitalize="none"
+          autoComplete={false}
           onChangeText={setEmail}
         />
         <Spacer size="large">
@@ -46,6 +46,7 @@ const RegisterScreen = ({ navigation }: RegisterScreenProps): JSX.Element => {
             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
+            autoComplete={false}
             onChangeText={setPassword}
           />
         </Spacer>
@@ -56,6 +57,7 @@ const RegisterScreen = ({ navigation }: RegisterScreenProps): JSX.Element => {
             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
+            autoComplete={false}
             onChangeText={setRepeatedPassword}
           />
         </Spacer>
@@ -86,5 +88,3 @@ const RegisterScreen = ({ navigation }: RegisterScreenProps): JSX.Element => {
     </S.AccountBackground>
   );
 };
-
-export default RegisterScreen;
