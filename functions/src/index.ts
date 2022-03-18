@@ -1,5 +1,5 @@
 import * as functions from "firebase-functions";
-import { geocodeRequest } from "../geocode";
+import { geocodeRequest } from "./geocode";
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
