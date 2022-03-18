@@ -38,7 +38,7 @@ export const CameraScreen = ({
 
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
+      const { status } = await Camera.requestCameraPermissionsAsync();
       setHasPermission(status === "granted");
     })();
   }, []);
@@ -55,6 +55,7 @@ export const CameraScreen = ({
         cameraRef.current = camera;
       }}
       type={Camera.Constants.Type.front}
+      ratio={"16:9"}
     >
       <TouchableOpacity onPress={snap}>
         <S.InnerSnap />

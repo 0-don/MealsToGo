@@ -7,13 +7,12 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCzCX17R_2-J55Gij9jF0BNlTDaCH8qnBo",
-  authDomain: "mealstogo-450cd.firebaseapp.com",
-  projectId: "mealstogo-450cd",
-  storageBucket: "mealstogo-450cd.appspot.com",
-  messagingSenderId: "173844787537",
-  appId: "1:173844787537:web:6aebb5ab8fae223480a370",
-  measurementId: "G-ZPQMWZ5VCV",
+  apiKey: "AIzaSyDnEPl1QI-3nZURQck7sqoXKO1ouDmMqco",
+  authDomain: "mealstogo-ee48c.firebaseapp.com",
+  projectId: "mealstogo-ee48c",
+  storageBucket: "mealstogo-ee48c.appspot.com",
+  messagingSenderId: "761921617460",
+  appId: "1:761921617460:web:9709f105f828a197b8d461"
 };
 
 export const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();

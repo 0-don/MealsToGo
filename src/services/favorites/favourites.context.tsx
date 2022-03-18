@@ -1,8 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
-import { RestaurantProps } from "../restaurants/types";
 import { AuthenticationContext } from "../authentication/authentication.context";
+import { RestaurantProps } from "../restaurants/types";
 
 type Favorites = RestaurantProps;
 
@@ -23,30 +22,22 @@ export const FavouritesContext = createContext<FavouritesContextData>(
 const STORAGE_FAVOURITES = "@favourites";
 
 export const FavouritesContextProvider = ({ children }: Props): JSX.Element => {
-  // const { user } = useAuth();
   const { user } = useContext(AuthenticationContext);
 
   const [favourites, setFavourites] = useState<Favorites[]>([]);
 
-  const saveFavourites = async (value: Favorites[]) => {
+  const saveFavourites = async (value: Favorites[], uid: string) => {
     try {
       const jsonValue = JSON.stringify(value);
-      // await AsyncStorage.setItem(`${STORAGE_FAVOURITES}`, jsonValue);
-      await AsyncStorage.setItem(
-        `${STORAGE_FAVOURITES}-${user.uid}`,
-        jsonValue
-      );
+      await AsyncStorage.setItem(`${STORAGE_FAVOURITES}-${uid}`, jsonValue);
     } catch (e) {
       console.error("error storing", e);
     }
   };
 
-  const loadFavourites = async () => {
+  const loadFavourites = async (uid: string) => {
     try {
-      // const value = await AsyncStorage.getItem(`${STORAGE_FAVOURITES}`);
-      const value = await AsyncStorage.getItem(
-        `${STORAGE_FAVOURITES}-${user.uid}`
-      );
+      const value = await AsyncStorage.getItem(`${STORAGE_FAVOURITES}-${uid}`);
       if (value !== null) setFavourites(JSON.parse(value));
     } catch (e) {
       console.error("error loading", e);
@@ -66,22 +57,14 @@ export const FavouritesContextProvider = ({ children }: Props): JSX.Element => {
   };
 
   useEffect(() => {
-    loadFavourites();
-  }, []);
-
-  useEffect(() => {
-    saveFavourites(favourites);
-  }, [favourites]);
-
-  useEffect(() => {
     if (user && user.uid) {
-      loadFavourites();
+      loadFavourites(user.uid);
     }
   }, [user]);
 
   useEffect(() => {
     if (user && user.uid && favourites.length) {
-      saveFavourites(favourites);
+      saveFavourites(favourites, user.uid);
     }
   }, [favourites, user]);
 
@@ -97,12 +80,3 @@ export const FavouritesContextProvider = ({ children }: Props): JSX.Element => {
     </FavouritesContext.Provider>
   );
 };
-
-export function useFavorite(): FavouritesContextData {
-  const context = useContext(FavouritesContext);
-
-  if (!context)
-    throw new Error("useFavorite must be used within an FavoriteProvider");
-
-  return context;
-}
