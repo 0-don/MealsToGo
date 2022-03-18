@@ -12,6 +12,7 @@ import { CompositeNavigationProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootBottomParamList } from "../../../infrastructure/navigation/app.navigator";
 import { RootStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
+import { SafeArea } from "../../../components/utility/safe-area.component";
 
 const Map = styled(MapView)`
   height: 100%;
@@ -27,7 +28,7 @@ type Props = {
   navigation: MapScreenNavigationProp;
 };
 
-export const MapScreen = ({ navigation }: Props) => {
+export const RestaurantMap = ({ navigation }: Props) => {
   const { location } = useContext(LocationContext);
   const { restaurants = [] } = useContext(RestaurantsContext);
 
@@ -76,4 +77,23 @@ export const MapScreen = ({ navigation }: Props) => {
       </Map>
     </>
   );
+};
+
+export const MapScreen = ({ navigation }: Props) => {
+  const { location } = useContext(LocationContext);
+  if (!location) {
+    return (
+      <SafeArea>
+        <Map
+          region={{
+            latitude: 0,
+            longitude: 0,
+            latitudeDelta: 0,
+            longitudeDelta: 0.02,
+          }}
+        />
+      </SafeArea>
+    );
+  }
+  return <RestaurantMap navigation={navigation} />;
 };

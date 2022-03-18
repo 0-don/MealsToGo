@@ -30,15 +30,16 @@ export const placesRequest = (
 ) => {
   const { location, mock } = parse(request.url, true)
     .query as PlacesRequestQuery;
+
   if (mock === "true") {
     const data = mocks[location];
     if (data) {
       data.results = data.results.map(addMockImage);
     }
-    response.json(mock);
+    return response.json(data);
   }
 
-  client
+  return client
     .placesNearby({
       params: {
         location,

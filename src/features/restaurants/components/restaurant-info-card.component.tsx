@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+
 import { SvgXml } from "react-native-svg";
 import open from "../../../../assets/open";
 import star from "../../../../assets/star";

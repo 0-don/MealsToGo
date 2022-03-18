@@ -13,10 +13,10 @@ export const geocodeRequest = (
   const { city, mock } = parse(request.url, true).query as GeocodeRequestQuery;
   if (mock === "true") {
     const locationMock = locationsMock[city];
-    response.json(locationMock);
+    return response.json(locationMock);
   }
 
-  client
+  return client
     .geocode({
       params: {
         address: city,

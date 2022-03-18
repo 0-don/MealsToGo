@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
-import { SafeArea } from "../../../components/utility/safe-area.component";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { CompositeNavigationProp, RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
-import { RootBottomParamList } from "../../../infrastructure/navigation/app.navigator";
-import { List } from "react-native-paper";
+import React, { useState } from "react";
 import { SafeAreaView, ScrollView } from "react-native";
+import { List } from "react-native-paper";
+import { RootBottomParamList } from "../../../infrastructure/navigation/app.navigator";
+import { RootStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
+import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 type RestaurantsScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<RootBottomParamList, "Checkout">,

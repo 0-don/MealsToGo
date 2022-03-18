@@ -36,7 +36,7 @@ export const RestaurantsContextProvider: React.FC = ({ children }) => {
   };
 
   useEffect(() => {
-    if (location) {
+    if (location.lat && location.lng) {
       const locationString = `${location?.lat},${location?.lng}`;
 
       retrieveRestaurants(locationString);
