@@ -1,0 +1,544 @@
+[debug] [2022-03-18T15:20:51.185Z] ----------------------------------------------------------------------
+[debug] [2022-03-18T15:20:51.187Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\don\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2022-03-18T15:20:51.188Z] CLI Version:   10.4.0
+[debug] [2022-03-18T15:20:51.188Z] Platform:      win32
+[debug] [2022-03-18T15:20:51.188Z] Node Version:  v16.14.0
+[debug] [2022-03-18T15:20:51.189Z] Time:          Fri Mar 18 2022 16:20:51 GMT+0100 (Central European Standard Time)
+[debug] [2022-03-18T15:20:51.190Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-03-18T15:20:51.261Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-03-18T15:20:51.262Z] > authorizing via signed-in user (andrius.ziobakas@googlemail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-03-18T15:20:51.292Z] [hub] writing locator at C:\Users\don\AppData\Local\Temp\hub-mealstogo-ee48c.json
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-03-18T15:20:51.310Z] defaultcredentials: writing to file C:\Users\don\AppData\Roaming\firebase\andrius_ziobakas_googlemail.com_application_default_credentials.json
+[debug] [2022-03-18T15:20:51.311Z] Setting GAC to C:\Users\don\AppData\Roaming\firebase\andrius_ziobakas_googlemail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\don\\AppData\\Roaming\\firebase\\andrius_ziobakas_googlemail.com_application_default_credentials.json"}}
+[debug] [2022-03-18T15:20:51.313Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-ee48c/adminSdkConfig [none]
+[debug] [2022-03-18T15:20:51.941Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-ee48c/adminSdkConfig 200
+[debug] [2022-03-18T15:20:51.942Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-ee48c/adminSdkConfig {"projectId":"mealstogo-ee48c","storageBucket":"mealstogo-ee48c.appspot.com"}
+[debug] [2022-03-18T15:20:51.956Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-03-18T15:20:51.957Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-03-18T15:20:51.957Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\don\\.cache\\firebase\\emulators\\ui-v1.6.5\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\don\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.6.5\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-03-18T15:20:52.076Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "C:\MEGA\Private_Project\MealsToGo\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\MEGA\\Private_Project\\MealsToGo\\functions\" for Cloud Functions..."}}
+[debug] [2022-03-18T15:20:52.239Z] Validating nodejs source
+[debug] [2022-03-18T15:20:54.741Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T15:20:54.742Z] Building nodejs source
+[debug] [2022-03-18T15:20:54.742Z] Analyzing nodejs backend spec
+[info] +  functions[us-central1-helloWorld]: http function initialized (http://localhost:5001/mealstogo-ee48c/us-central1/helloWorld). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mealstogo-ee48c/us-central1/helloWorld)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-03-18T15:21:43.113Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-18T15:21:43.113Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-18T15:21:43.114Z] Accepted request GET /mealstogo-ee48c/us-central1/helloWorld --> us-central1-helloWorld
+[debug] [2022-03-18T15:21:43.120Z] [worker-pool] addWorker(us-central1-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-helloWorld)"}}
+[debug] [2022-03-18T15:21:43.120Z] [worker-pool] Adding worker with key us-central1-helloWorld, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-helloWorld, total=1"}}
+[debug] [2022-03-18T15:21:43.121Z] [worker-pool] submitWork(triggerId=us-central1-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-helloWorld)"}}
+[debug] [2022-03-18T15:21:43.121Z] [worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: Assigning socketPath: \\?\pipe\C:\MEGA\Private_Project\MealsToGo\functions\320 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: Assigning socketPath: \\\\?\\pipe\\C:\\MEGA\\Private_Project\\MealsToGo\\functions\\320"}}
+[debug] [2022-03-18T15:21:43.122Z] [worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: BUSY"}}
+[debug] [2022-03-18T15:21:44.409Z] [runtime-status] [320] Functions runtime initialized. {"cwd":"C:\\MEGA\\Private_Project\\MealsToGo\\functions","node_version":"16.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Functions runtime initialized. {\"cwd\":\"C:\\\\MEGA\\\\Private_Project\\\\MealsToGo\\\\functions\",\"node_version\":\"16.14.0\"}"}}
+[debug] [2022-03-18T15:21:44.409Z] [runtime-status] [320] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Disabled runtime features: undefined"}}
+[debug] [2022-03-18T15:21:44.412Z] [runtime-status] [320] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"C:\\MEGA\\Private_Project\\MealsToGo\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"C:\\\\MEGA\\\\Private_Project\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-18T15:21:44.413Z] [runtime-status] [320] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.19.0","resolution":"C:\\MEGA\\Private_Project\\MealsToGo\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.19.0\",\"resolution\":\"C:\\\\MEGA\\\\Private_Project\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-18T15:21:44.414Z] [runtime-status] [320] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-03-18T15:21:44.415Z] [runtime-status] [320] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.19.0","resolution":"C:\\MEGA\\Private_Project\\MealsToGo\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.19.0\",\"resolution\":\"C:\\\\MEGA\\\\Private_Project\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-18T15:21:44.459Z] [runtime-status] [320] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-03-18T15:21:44.459Z] [runtime-status] [320] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.19.0","resolution":"C:\\MEGA\\Private_Project\\MealsToGo\\functions\\node_modules\\firebase-functions\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.19.0\",\"resolution\":\"C:\\\\MEGA\\\\Private_Project\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}}"}}
+[debug] [2022-03-18T15:21:44.460Z] [runtime-status] [320] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.19.0","resolution":"C:\\MEGA\\Private_Project\\MealsToGo\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.19.0\",\"resolution\":\"C:\\\\MEGA\\\\Private_Project\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-18T15:21:44.462Z] [runtime-status] [320] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.0.2","resolution":"C:\\MEGA\\Private_Project\\MealsToGo\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"C:\\\\MEGA\\\\Private_Project\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-18T15:21:44.462Z] [runtime-status] [320] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.19.0","resolution":"C:\\MEGA\\Private_Project\\MealsToGo\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.19.0\",\"resolution\":\"C:\\\\MEGA\\\\Private_Project\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-18T15:21:44.462Z] [runtime-status] [320] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.0.2","resolution":"C:\\MEGA\\Private_Project\\MealsToGo\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.0.2\",\"resolution\":\"C:\\\\MEGA\\\\Private_Project\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2022-03-18T15:21:44.464Z] [runtime-status] [320] Beginning invocation function helloWorld! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Beginning invocation function helloWorld!"}}
+[info] i  functions: Beginning execution of "helloWorld" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Beginning execution of \"helloWorld\""}}
+[debug] [2022-03-18T15:21:44.465Z] [runtime-status] [320] Running helloWorld in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Running helloWorld in signature http"}}
+[debug] [2022-03-18T15:21:44.468Z] [runtime-status] [320] Attempting to listen to socketPath: \\?\pipe\C:\MEGA\Private_Project\MealsToGo\functions\320 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\MEGA\\Private_Project\\MealsToGo\\functions\\320"}}
+[debug] [2022-03-18T15:21:44.474Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-18T15:21:44.475Z] [functions] Got req.url=/mealstogo-ee48c/us-central1/helloWorld, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/mealstogo-ee48c/us-central1/helloWorld, mapping to path=/"}}
+[debug] [2022-03-18T15:21:44.482Z] [runtime-status] [320] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Ephemeral server handling GET request"}}
+[info] >  {"structuredData":true,"severity":"INFO","message":"Hello logs!"} {"user":{"structuredData":true,"severity":"INFO","message":"Hello logs!"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"structuredData\":true,\"severity\":\"INFO\",\"message\":\"Hello logs!\"}"}}
+[debug] [2022-03-18T15:21:44.487Z] [runtime-status] [320] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [320] Ephemeral server survived."}}
+[info] i  functions: Finished "helloWorld" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Finished \"helloWorld\" in ~1s"}}
+[debug] [2022-03-18T15:21:44.499Z] [worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: IDLE"}}
+[debug] [2022-03-18T15:21:44.500Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-18T15:21:44.601Z] Functions emulator received unknown request at path /favicon.ico
+[debug] [2022-03-18T19:05:21.882Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:05:22.890Z] [worker-pool] Shutting down IDLE worker (us-central1-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-helloWorld)"}}
+[debug] [2022-03-18T19:05:22.890Z] [worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: FINISHING"}}
+[debug] [2022-03-18T19:05:22.893Z] Validating nodejs source
+[debug] [2022-03-18T19:05:26.392Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:05:26.392Z] Building nodejs source
+[debug] [2022-03-18T19:05:26.392Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:05:26.397Z] [worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: exited"}}
+[debug] [2022-03-18T19:05:26.397Z] [worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-helloWorld-028e5f63-af15-47c1-99f3-10bfcae00456]: FINISHED"}}
+[debug] [2022-03-18T19:05:32.190Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:05:33.195Z] Validating nodejs source
+[debug] [2022-03-18T19:05:35.992Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:05:35.992Z] Building nodejs source
+[debug] [2022-03-18T19:05:35.992Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:05:40.848Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:05:41.861Z] Validating nodejs source
+[debug] [2022-03-18T19:05:44.445Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:05:44.445Z] Building nodejs source
+[debug] [2022-03-18T19:05:44.445Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:05:44.449Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:05:45.455Z] Validating nodejs source
+[debug] [2022-03-18T19:05:47.956Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:05:47.957Z] Building nodejs source
+[debug] [2022-03-18T19:05:47.957Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:05:49.194Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:05:50.209Z] Validating nodejs source
+[debug] [2022-03-18T19:05:52.821Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:05:52.821Z] Building nodejs source
+[debug] [2022-03-18T19:05:52.821Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:05:52.825Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:05:53.831Z] Validating nodejs source
+[debug] [2022-03-18T19:05:56.471Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:05:56.471Z] Building nodejs source
+[debug] [2022-03-18T19:05:56.471Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:05:56.476Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:05:57.490Z] Validating nodejs source
+[debug] [2022-03-18T19:06:00.098Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:06:00.098Z] Building nodejs source
+[debug] [2022-03-18T19:06:00.098Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:06:07.083Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:06:08.085Z] Validating nodejs source
+[debug] [2022-03-18T19:06:10.852Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:06:10.853Z] Building nodejs source
+[debug] [2022-03-18T19:06:10.853Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:06:10.857Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:06:11.860Z] Validating nodejs source
+[debug] [2022-03-18T19:06:14.483Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:06:14.484Z] Building nodejs source
+[debug] [2022-03-18T19:06:14.484Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:06:14.488Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:06:15.502Z] Validating nodejs source
+[debug] [2022-03-18T19:06:18.088Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:06:18.088Z] Building nodejs source
+[debug] [2022-03-18T19:06:18.088Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:06:18.092Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:06:19.096Z] Validating nodejs source
+[debug] [2022-03-18T19:06:21.649Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:06:21.649Z] Building nodejs source
+[debug] [2022-03-18T19:06:21.649Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:06:21.656Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:06:21.986Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:06:22.995Z] Validating nodejs source
+[debug] [2022-03-18T19:06:25.719Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:06:25.719Z] Building nodejs source
+[debug] [2022-03-18T19:06:25.719Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:06:26.464Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:06:27.469Z] Validating nodejs source
+[debug] [2022-03-18T19:06:30.171Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:06:30.172Z] Building nodejs source
+[debug] [2022-03-18T19:06:30.172Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:06:41.989Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:06:42.996Z] Validating nodejs source
+[debug] [2022-03-18T19:06:45.501Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:06:45.501Z] Building nodejs source
+[debug] [2022-03-18T19:06:45.501Z] Analyzing nodejs backend spec
+[debug] [2022-03-18T19:06:45.507Z] File C:\MEGA\Private_Project\MealsToGo\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\MEGA\\Private_Project\\MealsToGo\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2022-03-18T19:06:46.519Z] Validating nodejs source
+[debug] [2022-03-18T19:06:49.066Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-18T19:06:49.066Z] Building nodejs source
+[debug] [2022-03-18T19:06:49.066Z] Analyzing nodejs backend spec
