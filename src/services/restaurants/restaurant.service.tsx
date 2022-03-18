@@ -1,4 +1,6 @@
 import camilaze from "../../utils/camelize";
+import { host } from "../../utils/env";
+
 import { MockProps, RestaurantProps } from "./types";
 
 // type valueof<T> = T[keyof T]; // : Promise<valueof<typeof mocks>>
@@ -6,9 +8,7 @@ import { MockProps, RestaurantProps } from "./types";
 export const restaurantRequest = (
   location: string = "37.7749295,-122.4194155"
 ): Promise<MockProps> =>
-  fetch(
-    `http://192.168.0.115:5001/mealstogo-ee48c/us-central1/placesNearby?location=${location}`
-  ).then((res) => res.json());
+  fetch(`${host}/placesNearby?location=${location}`).then((res) => res.json());
 
 export const restaurantsTransform = ({
   results = [],

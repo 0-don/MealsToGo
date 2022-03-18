@@ -1,4 +1,5 @@
 import camelize from "../../utils/camelize";
+import { host } from "../../utils/env";
 import { locations } from "./location.mock";
 
 export type LocationReq = {
@@ -40,9 +41,7 @@ export type LocationProps = {
 export const locationRequest = async (
   searchTerm: string
 ): Promise<LocationReq> => {
-  return fetch(
-    `http://192.168.0.115:5001/mealstogo-ee48c/us-central1/geocode?city=${searchTerm}`
-  ).then((res) => res.json());
+  return fetch(`${host}/geocode?city=${searchTerm}`).then((res) => res.json());
 };
 
 export const locationTransform = (result: LocationReq) => {
