@@ -13,6 +13,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.11",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.0"
   },

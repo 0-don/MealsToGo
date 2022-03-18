@@ -23,8 +23,6 @@ export default function App() {
     return null;
   }
 
-  // if (!isAuthenticated) return null;
-
   return (
     <>
       <ThemeProvider theme={theme}>

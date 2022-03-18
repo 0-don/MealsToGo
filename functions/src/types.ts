@@ -1,8 +1,14 @@
 import { locations } from "./geocode/geocode.mock";
 import { mocks } from "./places/mock";
 
-export type GeocodeRequestQuery = { city: keyof typeof locations };
-export type PlacesRequestQuery = { location: keyof typeof mocks };
+export type GeocodeRequestQuery = {
+  city: keyof typeof locations;
+  mock: "true" | undefined;
+};
+export type PlacesRequestQuery = {
+  location: keyof typeof mocks;
+  mock: "true" | undefined;
+};
 
 export type MockProps = {
   html_attributions: Array<[]>;
