@@ -37,14 +37,12 @@ export type LocationProps = {
   };
 };
 
-export const locationRequest = (searchTerm: string): Promise<LocationReq> => {
-  return new Promise((resolve, reject) => {
-    const locationMock = locations[searchTerm as keyof typeof locations];
-    if (!locationMock) {
-      reject("not found");
-    }
-    resolve(locationMock);
-  });
+export const locationRequest = async (
+  searchTerm: string
+): Promise<LocationReq> => {
+  return fetch(
+    `http://192.168.0.115:5001/mealstogo-ee48c/us-central1/geocode?city=${searchTerm}`
+  ).then((res) => res.json());
 };
 
 export const locationTransform = (result: LocationReq) => {
