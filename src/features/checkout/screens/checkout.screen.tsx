@@ -89,7 +89,12 @@ const CheckoutScreen = ({ navigation }: CheckoutScreenProps): JSX.Element => {
         </Spacer>
         <Spacer position="top" size="large" />
         <Divider />
-        <S.NameInput label="Name" value={name} onChangeText={setName} />
+        <S.NameInput
+          label="Name"
+          value={name}
+          onChangeText={setName}
+          autoComplete={false}
+        />
 
         <Spacer position="top" size="large">
           {name.length > 0 && (

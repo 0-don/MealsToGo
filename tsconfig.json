@@ -9,8 +9,6 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strict": true,
-    "baseUrl": "src",
-    "declaration": true,
-    "declarationDir": "./src/@types"
+    "baseUrl": "src"
   }
 }

@@ -1,17 +1,15 @@
-import React from 'react';
-import { LiteCreditCardInput } from 'react-native-credit-card-input';
-import { cardTokenRequest } from '../../../services/checkout/checkout.service';
-
-
+import React, { Dispatch, SetStateAction } from "react";
+import { LiteCreditCardInput } from "react-native-credit-card-input";
+import { cardTokenRequest } from "../../../services/checkout/checkout.service";
 
 type CreditCardInputProps = {
   name: string;
-  onSuccess: (info: string) => void;
+  onSuccess: Dispatch<SetStateAction<Card | undefined>>;
   onError: () => void;
 };
 
 type FormDataProps = {
-  status: 'valid' | 'invalid' | 'incomplete';
+  status: "valid" | "invalid" | "incomplete";
   values: {
     number: string;
     expiry: string;
@@ -20,24 +18,26 @@ type FormDataProps = {
 };
 
 export type Card = {
+  id: string;
   number: string;
   exp_month: string;
   exp_year: string;
   cvc: string;
   name: string;
-}
+};
 
 export const CreditCardInput = ({
-  name = '',
+  name = "",
   onSuccess,
   onError,
 }: CreditCardInputProps): JSX.Element => {
   const onChange = async (formData: FormDataProps) => {
     const { values, status } = formData;
-    const isIncomplete = Object.values(status).includes('incomplete');
-    const expiry = values.expiry.split('/');
+    const isIncomplete = Object.values(status).includes("incomplete");
+    const expiry = values.expiry.split("/");
 
     const card = {
+      id: "",
       number: values.number,
       exp_month: expiry[0],
       exp_year: expiry[1],

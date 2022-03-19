@@ -5,7 +5,7 @@ import { host } from "../../utils/env";
 
 const stripe = createStripe("");
 
-export const cardTokenRequest = async (card: Card): Promise<string> =>
+export const cardTokenRequest = async (card: Card): Promise<Card> =>
   stripe.createToken({ card });
 
 export const payRequest = async (
