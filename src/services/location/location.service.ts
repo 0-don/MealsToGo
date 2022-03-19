@@ -1,4 +1,4 @@
-import camelize from "../../utils/camelize";
+import camelize from "camelize"
 import { host, isMock } from "../../utils/env";
 
 export type LocationReq = {

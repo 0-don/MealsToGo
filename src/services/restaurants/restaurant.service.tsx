@@ -1,4 +1,4 @@
-import camilaze from "../../utils/camelize";
+import camilaze from "camelize";
 import { host, isMock } from "../../utils/env";
 
 import { MockProps, RestaurantProps } from "./types";
@@ -8,7 +8,9 @@ import { MockProps, RestaurantProps } from "./types";
 export const restaurantRequest = (
   location: string = "37.7749295,-122.4194155"
 ): Promise<MockProps> =>
-  fetch(`${host}/placesNearby?location=${location}&mock=${isMock}`).then((res) => res.json());
+  fetch(`${host}/placesNearby?location=${location}&mock=${isMock}`).then(
+    (res) => res.json()
+  );
 
 export const restaurantsTransform = ({
   results = [],

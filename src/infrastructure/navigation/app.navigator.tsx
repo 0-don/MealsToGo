@@ -2,6 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ParamListBase, RouteProp } from "@react-navigation/native";
 import React from "react";
+import { CheckoutScreen } from "../../features/checkout/screens/checkout.screen";
 import { MapScreen } from "../../features/map/screens/map.screen";
 import { FavouritesContextProvider } from "../../services/favorites/favourites.context";
 import { LocationContextProvider } from "../../services/location/location.context";
@@ -10,7 +11,7 @@ import { RestaurantsNavigator } from "./restaurants.navigator";
 import { SettingsNavigator } from "./settings.navigator";
 
 export type TabIcon = {
-  [key in "Restaurants" | "Map" | "Setting"]: keyof typeof Ionicons.glyphMap;
+  [key in "Restaurants" | "Map" | "Setting" | "Checkout"]: keyof typeof Ionicons.glyphMap;
 };
 
 export type TabIconColor = {
@@ -33,6 +34,7 @@ export type RootBottomParamList = {
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON: TabIcon = {
+  Checkout: "md-cart",
   Restaurants: "md-restaurant",
   Map: "md-map",
   Setting: "md-settings",
@@ -58,6 +60,7 @@ export const AppNavigator = () => {
         <RestaurantsContextProvider>
           <Tab.Navigator screenOptions={createScreenOptions}>
             <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
+            <Tab.Screen name="Checkout" component={CheckoutScreen} />
             <Tab.Screen name="Map" component={MapScreen} />
             <Tab.Screen name="Setting" component={SettingsNavigator} />
           </Tab.Navigator>
