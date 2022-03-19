@@ -1,15 +1,27 @@
 import {
-  apiKey, appId, authDomain, messagingSenderId, projectId,
-  storageBucket
+  apiKey,
+  appId,
+  authDomain,
+  messagingSenderId,
+  projectId,
+  storageBucket,
 } from "@env";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { getApp, getApps, initializeApp } from "firebase/app";
 import {
   Auth,
   getReactNativePersistence,
-  initializeAuth
+  initializeAuth,
 } from "firebase/auth/react-native";
 
+console.log({
+  apiKey,
+  appId,
+  authDomain,
+  messagingSenderId,
+  projectId,
+  storageBucket,
+})
 const firebaseConfig = {
   apiKey,
   authDomain,

@@ -1,0 +1,14 @@
+{
+  "stripe": {
+    "test": "sk_test_yourStripePrivateTestKey",
+    "live": "sk_live_yourStripePrivateLiveKey"
+  },
+  "google": {
+    "key": "your google cloud key"
+  }
+}
+// run this commands
+// firebase functions:config:set stripe.test="sk_test_yourStripePrivateTestKey"
+// firebase functions:config:set stripe.live="sk_live_yourStripePrivateLiveKey"
+// firebase functions:config:set google.key="your google cloud key"
+// firebase functions:config:get > .runtimeconfig.json
