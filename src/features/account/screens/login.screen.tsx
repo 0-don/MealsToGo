@@ -20,8 +20,8 @@ type LoginScreenProps = {
 export const LoginScreen = ({ navigation }: LoginScreenProps): JSX.Element => {
   const { onLogin, error, isLoading } = useContext(AuthenticationContext);
 
-  const [email, setEmail] = useState(!isDevelopment ? "don@don.don" : "");
-  const [password, setPassword] = useState(!isDevelopment ? "dondon" : "");
+  const [email, setEmail] = useState(isDevelopment ? "don@don.don" : "");
+  const [password, setPassword] = useState(isDevelopment ? "dondon" : "");
 
   const handleLogin = useCallback(() => {
     onLogin(email, password);
@@ -44,8 +44,7 @@ export const LoginScreen = ({ navigation }: LoginScreenProps): JSX.Element => {
         <Spacer size="large">
           <S.AuthInput
             label="Password"
-            value="dondon"
-            // value={password}
+            value={password}
             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
