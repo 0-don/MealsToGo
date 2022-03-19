@@ -9,8 +9,8 @@ import { Text } from "../../../components/typography/text.component";
 import { RootStackParamList } from "../../../infrastructure/navigation/settings.navigator";
 import { theme } from "../../../infrastructure/theme";
 import {
-    AuthenticationContext,
-    UserProps
+  AuthenticationContext,
+  UserProps,
 } from "../../../services/authentication/authentication.context";
 import * as S from "./settings.styles";
 

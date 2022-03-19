@@ -1,6 +1,6 @@
 import {
-    createStackNavigator,
-    TransitionPresets
+  createStackNavigator,
+  TransitionPresets,
 } from "@react-navigation/stack";
 import React from "react";
 import { RestaurantDetailScreen } from "../../features/restaurants/screens/restaurant-detail.screen";

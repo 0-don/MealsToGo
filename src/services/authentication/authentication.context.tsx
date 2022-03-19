@@ -1,6 +1,6 @@
 import {
   createUserWithEmailAndPassword,
-  User
+  User,
 } from "firebase/auth/react-native";
 import React, { createContext, useCallback, useState } from "react";
 import { auth } from "../../config/firebase";

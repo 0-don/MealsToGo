@@ -1,6 +1,6 @@
 import {
-    CardStyleInterpolators,
-    createStackNavigator
+  CardStyleInterpolators,
+  createStackNavigator,
 } from "@react-navigation/stack";
 import React from "react";
 import { CameraScreen } from "../../features/settings/screens/camera.screen";

@@ -14,14 +14,6 @@ import {
   initializeAuth,
 } from "firebase/auth/react-native";
 
-console.log({
-  apiKey,
-  appId,
-  authDomain,
-  messagingSenderId,
-  projectId,
-  storageBucket,
-})
 const firebaseConfig = {
   apiKey,
   authDomain,

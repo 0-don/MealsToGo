@@ -16,7 +16,7 @@ import {
   RestaurantCard,
   RestaurantCardCover,
   Section,
-  SectionEnd
+  SectionEnd,
 } from "./restaurant-info-card.style";
 
 export const RestaurantInfoCard: React.FC<{ restaurant: RestaurantProps }> = ({

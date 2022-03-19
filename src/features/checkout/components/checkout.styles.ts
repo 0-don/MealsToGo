@@ -3,7 +3,7 @@ import {
   Avatar,
   Button,
   Colors,
-  TextInput
+  TextInput,
 } from "react-native-paper";
 import styled, { css } from "styled-components/native";
 import { ThemeType } from "./../../../infrastructure/theme";
@@ -22,7 +22,8 @@ type CartIconProp = {
 export const CartIcon = styled(Avatar.Icon).attrs({
   size: 128,
 })`
-  background-color: ${(props: CartIconProp) => props.bg || props.theme.colors.brand.primary};
+  background-color: ${(props: CartIconProp) =>
+    props.bg || props.theme.colors.brand.primary};
 `;
 
 export const NameInput = styled(TextInput)`
