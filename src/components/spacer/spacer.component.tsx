@@ -6,6 +6,7 @@ const sizeVariant = {
   small: 1,
   medium: 2,
   large: 3,
+  xxl: 4,
 };
 
 const positionVariant = {
@@ -48,4 +49,5 @@ export const Spacer = ({
 Spacer.defaultProps = {
   position: "top",
   size: "small",
+  children: undefined
 };

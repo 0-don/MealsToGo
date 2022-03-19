@@ -14,6 +14,7 @@ export const CartIconContainer = styled.View`
 `;
 export const CartIcon = styled(Avatar.Icon).attrs({
   size: 128,
+  bg: "",
 })`
   ${({ theme }) => css`
     background-color: ${theme.colors.brand.primary};
