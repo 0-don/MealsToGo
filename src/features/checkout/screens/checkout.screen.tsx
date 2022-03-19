@@ -14,14 +14,16 @@ import { Card, CreditCardInput } from "../components/credit-card.component";
 
 type CheckoutScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
-  "Checkout"
+  "CheckoutDetails"
 >;
 
 type CheckoutScreenProps = {
   navigation: CheckoutScreenNavigationProp;
 };
 
-const CheckoutScreen = ({ navigation }: CheckoutScreenProps): JSX.Element => {
+export const CheckoutScreen = ({
+  navigation,
+}: CheckoutScreenProps): JSX.Element => {
   const { cart, restaurant, sum, clearCart } = useContext(CartContext);
 
   const [name, setName] = useState("");
@@ -55,7 +57,7 @@ const CheckoutScreen = ({ navigation }: CheckoutScreenProps): JSX.Element => {
     onPay();
   }, [onPay]);
 
-  if (!cart.length || !restaurant) {
+  if (!cart?.length || !restaurant) {
     return (
       <SafeArea>
         <S.CartIconContainer>
@@ -134,5 +136,3 @@ const CheckoutScreen = ({ navigation }: CheckoutScreenProps): JSX.Element => {
     </SafeArea>
   );
 };
-
-export default CheckoutScreen;

@@ -8,7 +8,6 @@
     "noEmit": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "strict": true,
-    "baseUrl": "src"
+    "strict": true
   }
 }

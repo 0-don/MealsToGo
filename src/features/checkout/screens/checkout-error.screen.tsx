@@ -1,12 +1,10 @@
-import React from "react";
 import { RouteProp } from "@react-navigation/native";
-
+import React from "react";
 import { Text } from "../../../components/typography/text.component";
-
-import { CartIconContainer, CartIcon } from "../components/checkout.styles";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { RootStackParamList } from "../../../infrastructure/navigation/checkout.navigator";
 import { theme } from "../../../infrastructure/theme";
+import { CartIcon, CartIconContainer } from "../components/checkout.styles";
 
 type CheckoutErrorScreenRouteProp = RouteProp<
   RootStackParamList,

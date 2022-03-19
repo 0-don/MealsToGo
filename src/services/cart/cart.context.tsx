@@ -86,7 +86,7 @@ export const CartContextProvider = ({ children }: Props): JSX.Element => {
   }, [restaurant, cart, user]);
 
   useEffect(() => {
-    if (!cart.length) {
+    if (!cart?.length) {
       setSum(0);
       return;
     }

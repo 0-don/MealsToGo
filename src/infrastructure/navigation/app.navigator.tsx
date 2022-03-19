@@ -2,16 +2,22 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ParamListBase, RouteProp } from "@react-navigation/native";
 import React from "react";
-import { CheckoutScreen } from "../../features/checkout/screens/checkout.screen";
+
 import { MapScreen } from "../../features/map/screens/map.screen";
+import { CartContextProvider } from "../../services/cart/cart.context";
 import { FavouritesContextProvider } from "../../services/favorites/favourites.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
+import { CheckoutNavigator } from "./checkout.navigator";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { SettingsNavigator } from "./settings.navigator";
 
 export type TabIcon = {
-  [key in "Restaurants" | "Map" | "Setting" | "Checkout"]: keyof typeof Ionicons.glyphMap;
+  [key in
+    | "Restaurants"
+    | "Map"
+    | "Setting"
+    | "Checkout"]: keyof typeof Ionicons.glyphMap;
 };
 
 export type TabIconColor = {
@@ -58,12 +64,14 @@ export const AppNavigator = () => {
     <FavouritesContextProvider>
       <LocationContextProvider>
         <RestaurantsContextProvider>
-          <Tab.Navigator screenOptions={createScreenOptions}>
-            <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-            <Tab.Screen name="Checkout" component={CheckoutScreen} />
-            <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Setting" component={SettingsNavigator} />
-          </Tab.Navigator>
+          <CartContextProvider>
+            <Tab.Navigator screenOptions={createScreenOptions}>
+              <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
+              <Tab.Screen name="Checkout" component={CheckoutNavigator} />
+              <Tab.Screen name="Map" component={MapScreen} />
+              <Tab.Screen name="Setting" component={SettingsNavigator} />
+            </Tab.Navigator>
+          </CartContextProvider>
         </RestaurantsContextProvider>
       </LocationContextProvider>
     </FavouritesContextProvider>
