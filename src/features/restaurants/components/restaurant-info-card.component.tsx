@@ -1,5 +1,5 @@
 import React from "react";
-
+import { StyleSheet } from "react-native";
 import { SvgXml } from "react-native-svg";
 import open from "../../../../assets/open";
 import star from "../../../../assets/star";
@@ -16,7 +16,7 @@ import {
   RestaurantCard,
   RestaurantCardCover,
   Section,
-  SectionEnd,
+  SectionEnd
 } from "./restaurant-info-card.style";
 
 export const RestaurantInfoCard: React.FC<{ restaurant: RestaurantProps }> = ({
@@ -48,7 +48,7 @@ export const RestaurantInfoCard: React.FC<{ restaurant: RestaurantProps }> = ({
           </Rating>
           <SectionEnd>
             {isClosedTemporarily && (
-              <Text variant="caption" style={{ color: "red" }}>
+              <Text variant="caption" style={styles.text}>
                 CLOSED TEMPORARILY
               </Text>
             )}
@@ -56,7 +56,7 @@ export const RestaurantInfoCard: React.FC<{ restaurant: RestaurantProps }> = ({
               {isOpenNow && <Open xml={open} width={20} height={20} />}
             </Spacer>
             <Spacer position="left" size="large">
-              <Icon style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+              <Icon style={styles.icon} source={{ uri: icon }} />
             </Spacer>
           </SectionEnd>
         </Section>
@@ -65,3 +65,8 @@ export const RestaurantInfoCard: React.FC<{ restaurant: RestaurantProps }> = ({
     </RestaurantCard>
   );
 };
+
+const styles = StyleSheet.create({
+  icon: { width: 15, height: 15 },
+  text: { color: "red" },
+});

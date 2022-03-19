@@ -3,7 +3,7 @@ import {
   Avatar,
   Button,
   Colors,
-  TextInput,
+  TextInput
 } from "react-native-paper";
 import styled, { css } from "styled-components/native";
 import { ThemeType } from "./../../../infrastructure/theme";

@@ -1,11 +1,10 @@
-import React from "react";
 import { StackNavigationProp } from "@react-navigation/stack";
 import LottieView from "lottie-react-native";
-
+import React from "react";
 import lottie from "../../../../assets/watermelon.json";
 import { Spacer } from "../../../components/spacer/spacer.component";
-import * as S from "../components/account.styles";
 import { RootStackParamList } from "../../../infrastructure/navigation/account.navigator";
+import * as S from "../components/account.styles";
 
 type AccountScreenNavigationProp = StackNavigationProp<
   RootStackParamList,

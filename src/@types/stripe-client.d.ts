@@ -1,1 +1,1 @@
-declare module 'stripe-client';
+declare module "stripe-client";

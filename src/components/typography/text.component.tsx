@@ -1,4 +1,4 @@
-import styled, { DefaultTheme } from 'styled-components/native';
+import styled, { DefaultTheme } from "styled-components/native";
 
 const defaultTextStyles = (theme: DefaultTheme) => `
   font-family: ${theme.fonts.body};
@@ -46,7 +46,5 @@ type TextProps = {
 
 export const Text = styled.Text<TextProps>`
   ${({ theme }) => defaultTextStyles(theme)}
-  ${({ variant = 'body', theme }) => variants[variant](theme)}
+  ${({ variant = "body", theme }) => variants[variant](theme)}
 `;
-
-

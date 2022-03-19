@@ -1,14 +1,12 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
-import { View, TouchableOpacity } from "react-native";
-import { Camera } from "expo-camera";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { StackNavigationProp } from "@react-navigation/stack";
-
+import { Camera } from "expo-camera";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { TouchableOpacity, View } from "react-native";
 import { Text } from "../../../components/typography/text.component";
-
-import * as S from "./camera.styles";
-import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { RootStackParamList } from "../../../infrastructure/navigation/settings.navigator";
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import * as S from "./camera.styles";
 
 type SettingsScreenNavigationProp = StackNavigationProp<
   RootStackParamList,

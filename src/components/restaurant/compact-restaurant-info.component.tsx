@@ -1,9 +1,7 @@
 import React from "react";
 import { Platform } from "react-native";
 import { RestaurantProps } from "../../services/restaurants/types";
-
 import { Text } from "../typography/text.component";
-
 import * as S from "./compact-restaurant-info.styles";
 
 type CompactRestaurantInfoProps = {

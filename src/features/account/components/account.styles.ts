@@ -1,6 +1,5 @@
-/* eslint-disable global-require */
-import styled, { css } from "styled-components/native";
 import { Button, TextInput } from "react-native-paper";
+import styled, { css } from "styled-components/native";
 import { Text } from "../../../components/typography/text.component";
 
 export const AccountBackground = styled.ImageBackground.attrs({

@@ -1,6 +1,5 @@
 import camilaze from "camelize";
 import { host, isMock } from "../../utils/env";
-
 import { MockProps, RestaurantProps } from "./types";
 
 // type valueof<T> = T[keyof T]; // : Promise<valueof<typeof mocks>>

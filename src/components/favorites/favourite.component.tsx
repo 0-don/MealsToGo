@@ -1,11 +1,8 @@
-import React, { useContext, useMemo } from "react";
 import { AntDesign } from "@expo/vector-icons";
-
-import * as S from "./favourite.styles";
-
-import { RestaurantProps } from "../../services/restaurants/types";
-import { Platform } from "react-native";
+import React, { useContext, useMemo } from "react";
 import { FavouritesContext } from "../../services/favorites/favourites.context";
+import { RestaurantProps } from "../../services/restaurants/types";
+import * as S from "./favourite.styles";
 
 type FavouriteProps = {
   restaurant: RestaurantProps;
@@ -26,7 +23,6 @@ export const Favourite = ({ restaurant }: FavouriteProps): JSX.Element => {
           ? addToFavourites(restaurant)
           : removeFromFavourites(restaurant)
       }
-      style={{ elevation: Platform.OS === "android" ? 50 : 0 }}
     >
       <AntDesign
         name={isFavourite ? "heart" : "hearto"}

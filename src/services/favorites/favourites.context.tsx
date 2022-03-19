@@ -1,5 +1,5 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { AuthenticationContext } from "../authentication/authentication.context";
 import { RestaurantProps } from "../restaurants/types";
 
@@ -38,7 +38,9 @@ export const FavouritesContextProvider = ({ children }: Props): JSX.Element => {
   const loadFavourites = async (uid: string) => {
     try {
       const value = await AsyncStorage.getItem(`${STORAGE_FAVOURITES}-${uid}`);
-      if (value !== null) setFavourites(JSON.parse(value));
+      if (value !== null) {
+        setFavourites(JSON.parse(value));
+      }
     } catch (e) {
       console.error("error loading", e);
     }

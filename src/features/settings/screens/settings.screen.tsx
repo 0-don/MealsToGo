@@ -1,17 +1,18 @@
-import React, { useState, useCallback, useContext } from "react";
-import { TouchableOpacity } from "react-native";
-import { List, Avatar } from "react-native-paper";
-import { StackNavigationProp } from "@react-navigation/stack";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
-
-import { Text } from "../../../components/typography/text.component";
-
-import * as S from "./settings.styles";
-import { AuthenticationContext, UserProps } from "../../../services/authentication/authentication.context";
-import { theme } from "../../../infrastructure/theme";
+import { StackNavigationProp } from "@react-navigation/stack";
+import React, { useCallback, useContext, useState } from "react";
+import { TouchableOpacity } from "react-native";
+import { Avatar, List } from "react-native-paper";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "../../../components/typography/text.component";
 import { RootStackParamList } from "../../../infrastructure/navigation/settings.navigator";
+import { theme } from "../../../infrastructure/theme";
+import {
+  AuthenticationContext,
+  UserProps
+} from "../../../services/authentication/authentication.context";
+import * as S from "./settings.styles";
 
 type SettingsScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -22,13 +23,17 @@ type SettingsScreenProps = {
   navigation: SettingsScreenNavigationProp;
 };
 
-export const SettingsScreen = ({ navigation }: SettingsScreenProps): JSX.Element => {
+export const SettingsScreen = ({
+  navigation,
+}: SettingsScreenProps): JSX.Element => {
   const { user, onLogout } = useContext(AuthenticationContext);
   const [photo, setPhoto] = useState("");
 
   const getProfilePicture = async (currentUser: UserProps) => {
     const photoUri = await AsyncStorage.getItem(`${currentUser.uid}-photo`);
-    if (photoUri) setPhoto(photoUri);
+    if (photoUri) {
+      setPhoto(photoUri);
+    }
   };
 
   useFocusEffect(
@@ -113,5 +118,3 @@ export const SettingsScreen = ({ navigation }: SettingsScreenProps): JSX.Element
     </S.SettingsBackground>
   );
 };
-
-

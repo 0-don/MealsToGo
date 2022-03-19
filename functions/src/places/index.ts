@@ -1,10 +1,10 @@
 import { Client } from "@googlemaps/google-maps-services-js";
-import { addMockImage, mockImages } from "./mock/index";
 import { Request, Response } from "express";
+import { config } from "firebase-functions";
 import { parse } from "url";
 import { PlacesRequestQuery } from "../types";
 import { mocks } from "./mock";
-import { config } from "firebase-functions";
+import { addMockImage, mockImages } from "./mock/index";
 
 const addGoogleImage = (restaurant: any) => {
   const ref = restaurant.photos[0].photo_reference;

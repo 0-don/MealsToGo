@@ -1,19 +1,16 @@
-import React, { useContext } from "react";
-import { TouchableOpacity } from "react-native";
 import { CompositeNavigationProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-
+import React, { useContext } from "react";
+import { TouchableOpacity } from "react-native";
+import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "../../../components/typography/text.component";
+import { SafeArea } from "../../../components/utility/safe-area.component";
 import { RootStackParamList as RestaurantsStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
 import { RootStackParamList as SettingsStackParamList } from "../../../infrastructure/navigation/settings.navigator";
-
-import { Text } from "../../../components/typography/text.component";
-
-import * as S from "./favourites.styles";
 import { FavouritesContext } from "../../../services/favorites/favourites.context";
-import { Spacer } from "../../../components/spacer/spacer.component";
-import { SafeArea } from "../../../components/utility/safe-area.component";
 import { RestaurantProps } from "../../../services/restaurants/types";
 import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
+import * as S from "./favourites.styles";
 
 type Favorites = RestaurantProps;
 

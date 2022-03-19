@@ -1,13 +1,11 @@
+import { StackNavigationProp } from "@react-navigation/stack";
 import React, { useCallback, useContext, useState } from "react";
 import { ActivityIndicator, Colors } from "react-native-paper";
-import { StackNavigationProp } from "@react-navigation/stack";
-
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
-
-import * as S from "../components/account.styles";
-import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { RootStackParamList } from "../../../infrastructure/navigation/account.navigator";
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import * as S from "../components/account.styles";
 
 type LoginScreenNavigationProp = StackNavigationProp<
   RootStackParamList,

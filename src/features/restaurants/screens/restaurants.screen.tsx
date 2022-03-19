@@ -8,6 +8,7 @@ import FadeInView from "../../../components/animations/fade.animation";
 import { Favourite } from "../../../components/favorites/favourite.component";
 import FavouritesBar from "../../../components/favorites/favouriteBar";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "../../../components/typography/text.component";
 import { RootStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
 import { FavouritesContext } from "../../../services/favorites/favourites.context";
 import { LocationContext } from "../../../services/location/location.context";
@@ -15,7 +16,6 @@ import { RestaurantsContext } from "../../../services/restaurants/restaurants.co
 import { RestaurantProps } from "../../../services/restaurants/types";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { Search } from "../components/search.component";
-import { Text } from "../../../components/typography/text.component";
 
 const SafeArea = styled.SafeAreaView`
   flex: 1;

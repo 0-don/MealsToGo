@@ -1,10 +1,10 @@
-import { getApps, initializeApp, getApp } from "firebase/app";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { getApp, getApps, initializeApp } from "firebase/app";
 import {
   Auth,
-  initializeAuth,
   getReactNativePersistence,
+  initializeAuth,
 } from "firebase/auth/react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDnEPl1QI-3nZURQck7sqoXKO1ouDmMqco",
@@ -12,10 +12,10 @@ const firebaseConfig = {
   projectId: "mealstogo-ee48c",
   storageBucket: "mealstogo-ee48c.appspot.com",
   messagingSenderId: "761921617460",
-  appId: "1:761921617460:web:9709f105f828a197b8d461"
+  appId: "1:761921617460:web:9709f105f828a197b8d461",
 };
 
-export const app = !getApps().length ? initializeApp(firebaseConfig) : getApp(); 
+export const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 //@ts-ignore
 const authProvider = app.container.getProvider("auth-exp");
 export let auth: Auth;

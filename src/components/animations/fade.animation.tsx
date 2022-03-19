@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import { Animated } from 'react-native';
+import React, { useEffect, useRef } from "react";
+import { Animated } from "react-native";
 
 type Props = {
   duration?: number;

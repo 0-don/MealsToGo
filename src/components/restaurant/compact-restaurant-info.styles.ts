@@ -1,5 +1,5 @@
-import styled from 'styled-components/native';
-import WebView from 'react-native-webview';
+import WebView from "react-native-webview";
+import styled from "styled-components/native";
 
 export const CompactImage = styled.Image`
   border-radius: 10px;

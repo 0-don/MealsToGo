@@ -1,9 +1,9 @@
 import { Client } from "@googlemaps/google-maps-services-js";
-import { locations as locationsMock } from "./geocode.mock";
 import { Request, Response } from "express";
+import { config } from "firebase-functions";
 import { parse } from "url";
 import { GeocodeRequestQuery } from "../types";
-import { config } from "firebase-functions";
+import { locations as locationsMock } from "./geocode.mock";
 
 export const geocodeRequest = (
   request: Request,

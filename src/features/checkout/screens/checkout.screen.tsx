@@ -1,5 +1,5 @@
 import { StackNavigationProp } from "@react-navigation/stack";
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { ScrollView } from "react-native";
 import { Divider, List } from "react-native-paper";
 import { Spacer } from "../../../components/spacer/spacer.component";
@@ -10,7 +10,7 @@ import { CartContext } from "../../../services/cart/cart.context";
 import { payRequest } from "../../../services/checkout/checkout.service";
 import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
 import * as S from "../components/checkout.styles";
-import { Card, CreditCardInput } from "../components/credit-card.component";
+import { CreditCardInput } from "../components/credit-card.component";
 
 type CheckoutScreenNavigationProp = StackNavigationProp<
   RootStackParamList,

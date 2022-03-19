@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
 import { FlatList } from "react-native";
+import styled from "styled-components/native";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { RestaurantProps } from "../../../services/restaurants/types";
 

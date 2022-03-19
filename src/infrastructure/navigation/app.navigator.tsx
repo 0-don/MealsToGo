@@ -2,7 +2,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ParamListBase, RouteProp } from "@react-navigation/native";
 import React from "react";
-
 import { MapScreen } from "../../features/map/screens/map.screen";
 import { CartContextProvider } from "../../services/cart/cart.context";
 import { FavouritesContextProvider } from "../../services/favorites/favourites.context";

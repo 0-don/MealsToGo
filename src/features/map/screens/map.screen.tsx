@@ -1,18 +1,16 @@
-import React, { useContext, useState, useEffect } from "react";
-import MapView, { Callout, Marker } from "react-native-maps";
-import styled from "styled-components/native";
-
-import { LocationContext } from "../../../services/location/location.context";
-import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
-
-import { Search } from "../components/search.component";
-import { MapCallout } from "../components/map-callout.component";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { CompositeNavigationProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import React, { useContext, useEffect, useState } from "react";
+import MapView, { Callout, Marker } from "react-native-maps";
+import styled from "styled-components/native";
+import { SafeArea } from "../../../components/utility/safe-area.component";
 import { RootBottomParamList } from "../../../infrastructure/navigation/app.navigator";
 import { RootStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
-import { SafeArea } from "../../../components/utility/safe-area.component";
+import { LocationContext } from "../../../services/location/location.context";
+import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
+import { MapCallout } from "../components/map-callout.component";
+import { Search } from "../components/search.component";
 
 const Map = styled(MapView)`
   height: 100%;

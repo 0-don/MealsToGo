@@ -49,5 +49,5 @@ export const Spacer = ({
 Spacer.defaultProps = {
   position: "top",
   size: "small",
-  children: undefined
+  children: undefined,
 };

@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components/native";
 import { List } from "react-native-paper";
+import styled, { css } from "styled-components/native";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 
 export const SettingsItem = styled(List.Item)`

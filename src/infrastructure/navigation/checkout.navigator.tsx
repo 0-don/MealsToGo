@@ -1,5 +1,5 @@
-import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import React from "react";
 import { CheckoutErrorScreen } from "../../features/checkout/screens/checkout-error.screen";
 import { CheckoutSuccessScreen } from "../../features/checkout/screens/checkout-success.screen";
 import { CheckoutScreen } from "../../features/checkout/screens/checkout.screen";

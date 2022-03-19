@@ -1,9 +1,9 @@
-import * as functions from "firebase-functions";
-import { geocodeRequest } from "./geocode";
-import { placesRequest } from "./places";
 import { Client } from "@googlemaps/google-maps-services-js";
+import * as functions from "firebase-functions";
 import Stripe from "stripe";
+import { geocodeRequest } from "./geocode";
 import { payRequest } from "./pay";
+import { placesRequest } from "./places";
 
 const stripeKey = process.env.FUNCTIONS_EMULATOR
   ? functions.config().stripe.test

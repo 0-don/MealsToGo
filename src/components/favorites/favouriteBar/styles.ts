@@ -1,5 +1,5 @@
-import styled from 'styled-components/native';
-import { Card } from 'react-native-paper';
+import { Card } from "react-native-paper";
+import styled from "styled-components/native";
 
 export const FavouritesWrapper = styled(Card)`
   padding: 10px;

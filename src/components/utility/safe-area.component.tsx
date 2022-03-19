@@ -8,5 +8,3 @@ export const SafeArea = styled.SafeAreaView`
     background-color: ${theme.colors.bg.primary};
   `}
 `;
-
-

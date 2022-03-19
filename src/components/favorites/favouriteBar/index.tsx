@@ -1,11 +1,10 @@
 import React from "react";
 import { ScrollView, TouchableOpacity } from "react-native";
+import { Text } from "../../../components/typography/text.component";
 import { RootStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
 import { RestaurantProps } from "../../../services/restaurants/types";
-import { Text } from "../../../components/typography/text.component";
 import CompactRestaurantInfo from "../../restaurant/compact-restaurant-info.component";
 import { Spacer } from "../../spacer/spacer.component";
-
 import * as S from "./styles";
 
 type FavouritesBarProps = {

@@ -1,7 +1,7 @@
 import antwerp from "./antwerp";
 import chicago from "./chicago";
-import toronto from "./toronto";
 import san_francisco from "./san_francisco";
+import toronto from "./toronto";
 
 export const mocks = {
   "51.219448,4.402464": antwerp,

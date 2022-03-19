@@ -1,1 +1,1 @@
-declare module 'camelize';
+declare module "camelize";

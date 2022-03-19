@@ -2,7 +2,7 @@ import {
   createUserWithEmailAndPassword,
   User,
 } from "firebase/auth/react-native";
-import React, { createContext, useCallback, useContext, useState } from "react";
+import React, { createContext, useCallback, useState } from "react";
 import { auth } from "../../config/firebase";
 import { loginRequest } from "./authentication.service";
 
@@ -35,9 +35,6 @@ export const AuthenticationProvider = ({
 }: AuthenticationProviderProps): JSX.Element => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  /* const [user, setUser] = useState<firebase.auth.UserCredential>(
-    {} as firebase.auth.UserCredential,
-  ); */
   const [user, setUser] = useState<UserProps>({} as UserProps);
 
   auth.onAuthStateChanged((usr) => {
@@ -53,8 +50,8 @@ export const AuthenticationProvider = ({
     setIsLoading(true);
 
     loginRequest(email, password)
-      .then(({ user }) => {
-        setUser(user);
+      .then(({ user: usr }) => {
+        setUser(usr);
         setError("");
         setIsLoading(false);
       })
@@ -75,8 +72,8 @@ export const AuthenticationProvider = ({
     }
 
     createUserWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
-        setUser(user);
+      .then(({ user: usr }) => {
+        setUser(usr);
         setError("");
         setIsLoading(false);
       })
