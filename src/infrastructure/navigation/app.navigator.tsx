@@ -7,6 +7,7 @@ import { CartContextProvider } from "../../services/cart/cart.context";
 import { FavouritesContextProvider } from "../../services/favorites/favourites.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
+import { theme } from "../theme";
 import { CheckoutNavigator } from "./checkout.navigator";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { SettingsNavigator } from "./settings.navigator";
@@ -53,7 +54,7 @@ const createScreenOptions = ({ route }: ScreenOption) => ({
       color={color}
     />
   ),
-  tabBarActiveTintColor: "tomato",
+  tabBarActiveTintColor: theme.colors.brand.primary,
   tabBarInactiveTintColor: "gray",
   headerShown: false,
 });

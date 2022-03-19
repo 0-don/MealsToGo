@@ -6,7 +6,7 @@ import { CartIcon, CartIconContainer } from "../components/checkout.styles";
 export const CheckoutSuccessScreen = (): JSX.Element => (
   <SafeArea>
     <CartIconContainer>
-      <CartIcon icon="check-bold" bg="#2182bd" />
+      <CartIcon icon="check-bold" />
       <Text variant="label">Success!</Text>
     </CartIconContainer>
   </SafeArea>

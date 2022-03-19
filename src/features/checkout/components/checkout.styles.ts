@@ -13,12 +13,16 @@ export const CartIconContainer = styled.View`
   justify-content: center;
   flex: 1;
 `;
-export const CartIcon = styled(Avatar.Icon).attrs<{ bg: string }>({
+
+type CartIconProp = {
+  bg?: string;
+  theme: ThemeType;
+};
+
+export const CartIcon = styled(Avatar.Icon).attrs({
   size: 128,
 })`
-  ${({ theme, bg }: { bg: string; theme: ThemeType }) => css`
-    background-color: ${bg || theme.colors.brand.primary};
-  `}
+  background-color: ${(props: CartIconProp) => props.bg || props.theme.colors.brand.primary};
 `;
 
 export const NameInput = styled(TextInput)`

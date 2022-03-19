@@ -62,7 +62,7 @@ export const CheckoutScreen = ({
     return (
       <SafeArea>
         <S.CartIconContainer>
-          <S.CartIcon icon="cart-off" bg="#2182bd" />
+          <S.CartIcon icon="cart-off" />
           <Text>Your cart is empty!</Text>
         </S.CartIconContainer>
       </SafeArea>

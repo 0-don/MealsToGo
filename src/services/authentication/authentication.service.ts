@@ -1,6 +1,6 @@
 import {
-  signInWithEmailAndPassword,
-  UserCredential,
+    signInWithEmailAndPassword,
+    UserCredential
 } from "firebase/auth/react-native";
 import { auth } from "../../config/firebase";
 

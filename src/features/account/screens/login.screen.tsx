@@ -5,6 +5,7 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import { RootStackParamList } from "../../../infrastructure/navigation/account.navigator";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import { isDevelopment } from "../../../utils/env";
 import * as S from "../components/account.styles";
 
 type LoginScreenNavigationProp = StackNavigationProp<
@@ -19,8 +20,8 @@ type LoginScreenProps = {
 export const LoginScreen = ({ navigation }: LoginScreenProps): JSX.Element => {
   const { onLogin, error, isLoading } = useContext(AuthenticationContext);
 
-  const [email, setEmail] = useState("don@don.don");
-  const [password, setPassword] = useState("dondon");
+  const [email, setEmail] = useState(!isDevelopment ? "don@don.don" : "");
+  const [password, setPassword] = useState(!isDevelopment ? "dondon" : "");
 
   const handleLogin = useCallback(() => {
     onLogin(email, password);
