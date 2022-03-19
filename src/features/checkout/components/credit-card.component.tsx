@@ -4,7 +4,7 @@ import { cardTokenRequest } from "../../../services/checkout/checkout.service";
 
 type CreditCardInputProps = {
   name: string;
-  onSuccess: Dispatch<SetStateAction<Card | undefined>>;
+  onSuccess: Dispatch<SetStateAction<{ id: string } | undefined>>;
   onError: () => void;
 };
 
@@ -18,7 +18,6 @@ type FormDataProps = {
 };
 
 export type Card = {
-  id: string;
   number: string;
   exp_month: string;
   exp_year: string;
@@ -37,7 +36,6 @@ export const CreditCardInput = ({
     const expiry = values.expiry.split("/");
 
     const card = {
-      id: "",
       number: values.number,
       exp_month: expiry[0],
       exp_year: expiry[1],

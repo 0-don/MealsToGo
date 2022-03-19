@@ -1,11 +1,12 @@
-import styled, { css } from "styled-components/native";
 import {
-  Avatar,
-  TextInput,
-  Button,
   ActivityIndicator,
+  Avatar,
+  Button,
   Colors,
+  TextInput,
 } from "react-native-paper";
+import styled, { css } from "styled-components/native";
+import { ThemeType } from "./../../../infrastructure/theme";
 
 export const CartIconContainer = styled.View`
   align-items: center;
@@ -16,8 +17,8 @@ export const CartIcon = styled(Avatar.Icon).attrs({
   size: 128,
   bg: "",
 })`
-  ${({ theme }) => css`
-    background-color: ${theme.colors.brand.primary};
+  ${({ theme, bg }: { bg: string; theme: ThemeType }) => css`
+    background-color: ${bg || theme.colors.brand.primary};
   `}
 `;
 

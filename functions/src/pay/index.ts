@@ -8,7 +8,7 @@ export const payRequest = (
 ) => {
   const body = JSON.parse(request.body);
   const { token, amount } = body;
-  console.log(token);
+  console.error(token);
   stripeClient.paymentIntents
     .create({
       amount,
@@ -20,7 +20,7 @@ export const payRequest = (
       response.json(paymentIntent);
     })
     .catch((e) => {
-      console.log(e);
+      console.error(e);
       response.status(400);
       response.send(e);
     });

@@ -1,6 +1,6 @@
-import { Card } from "react-native-paper";
+import { Button, Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 export const Icon = styled.Image`
   width: 15px;
@@ -52,4 +52,14 @@ export const SectionEnd = styled.View`
 
 export const Open = styled(SvgXml)`
   flex-direction: row;
+`;
+
+export const OrderButton = styled(Button).attrs(({ theme }) => ({
+  color: theme.colors.brand.primary,
+}))`
+  ${({ theme }) => css`
+    padding: ${theme.space[2]};
+    width: 80%;
+    align-self: center;
+  `}
 `;

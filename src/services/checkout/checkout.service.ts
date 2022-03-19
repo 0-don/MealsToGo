@@ -2,10 +2,11 @@ import createStripe from "stripe-client";
 import { Card } from "../../features/checkout/components/credit-card.component";
 import { host } from "../../utils/env";
 
+const stripe = createStripe(
+  "pk_live_51HzuVwBO89hznhCzQC3Loo5ivGo17qigXoZAadpabnnmBVqBnlD8pX5qvQmJVsFAHsA63qpDw3WM1QwJQkTvnh9000nfq9eZaj"
+);
 
-const stripe = createStripe("");
-
-export const cardTokenRequest = async (card: Card): Promise<Card> =>
+export const cardTokenRequest = async (card: Card): Promise<{ id: string }> =>
   stripe.createToken({ card });
 
 export const payRequest = async (

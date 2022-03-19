@@ -27,7 +27,7 @@ export const CheckoutScreen = ({
   const { cart, restaurant, sum, clearCart } = useContext(CartContext);
 
   const [name, setName] = useState("");
-  const [card, setCard] = useState<Card>();
+  const [card, setCard] = useState<{ id: string }>();
   const [isLoading, setIsLoading] = useState(false);
 
   const onPay = useCallback(() => {
@@ -53,9 +53,9 @@ export const CheckoutScreen = ({
       });
   }, [card, name, navigation, clearCart, sum]);
 
-  useEffect(() => {
-    onPay();
-  }, [onPay]);
+  // useEffect(() => {
+  //   onPay();
+  // }, [onPay]);
 
   if (!cart?.length || !restaurant) {
     return (
@@ -132,6 +132,7 @@ export const CheckoutScreen = ({
             Clear Cart
           </S.ClearButton>
         </Spacer>
+        <Spacer position="bottom" size="large" />
       </ScrollView>
     </SafeArea>
   );

@@ -1,12 +1,15 @@
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { CompositeNavigationProp, RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { SafeAreaView, ScrollView } from "react-native";
 import { List } from "react-native-paper";
+import { Spacer } from "../../../components/spacer/spacer.component";
 import { RootBottomParamList } from "../../../infrastructure/navigation/app.navigator";
 import { RootStackParamList } from "../../../infrastructure/navigation/restaurants.navigator";
+import { CartContext } from "../../../services/cart/cart.context";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+import { OrderButton } from "../components/restaurant-info-card.style";
 
 type RestaurantsScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<RootBottomParamList, "Checkout">,
@@ -30,6 +33,7 @@ export const RestaurantDetailScreen = ({ route, navigation }: Props) => {
   const [drinksExpanded, setDrinksExpanded] = useState(false);
 
   const { restaurant } = route.params;
+  const { addToCart } = useContext(CartContext);
   return (
     <SafeAreaView>
       <RestaurantInfoCard restaurant={restaurant} />
@@ -78,6 +82,18 @@ export const RestaurantDetailScreen = ({ route, navigation }: Props) => {
           <List.Item title="Coke" />
           <List.Item title="Fanta" />
         </List.Accordion>
+        <Spacer position="bottom" size="large">
+          <OrderButton
+            mode="contained"
+            icon="cash-usd"
+            onPress={() => {
+              addToCart({ id: "1", item: "special", price: 1299 }, restaurant);
+              navigation.navigate("Checkout");
+            }}
+          >
+            Order Special only 12.99!
+          </OrderButton>
+        </Spacer>
       </ScrollView>
     </SafeAreaView>
   );

@@ -42,7 +42,7 @@ export const CartContextProvider = ({ children }: Props): JSX.Element => {
       const jsonValue = JSON.stringify({ restaurant: rst, cart: crt });
       await AsyncStorage.setItem(`@cart-${uid}`, jsonValue);
     } catch (e) {
-      console.log("error storing", e);
+      console.error("error storing", e);
     }
   };
 
@@ -55,12 +55,12 @@ export const CartContextProvider = ({ children }: Props): JSX.Element => {
         setCart(crt);
       }
     } catch (e) {
-      console.log("error storing", e);
+      console.error("error storing", e);
     }
   };
 
   const add = (item: Cart, rst: RestaurantProps) => {
-    if (!restaurant || restaurant.placeId !== rst.placeId) {
+    if (!restaurant.placeId || restaurant.placeId !== rst.placeId) {
       setRestaurant(rst);
       setCart([item]);
     } else {

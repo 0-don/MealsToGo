@@ -9,6 +9,9 @@ import { ThemeProvider } from "styled-components/native";
 import { Navigation } from "./src/infrastructure/navigation";
 import { theme } from "./src/infrastructure/theme";
 import { AuthenticationProvider } from "./src/services/authentication/authentication.context";
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs(['Warning: componentWillReceiveProps']);
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
