@@ -32,6 +32,7 @@ export const CheckoutScreen = ({
 
   const onPay = useCallback(() => {
     setIsLoading(true);
+
     if (!card || !card.id) {
       setIsLoading(false);
       navigation.navigate("CheckoutError", {
@@ -61,7 +62,7 @@ export const CheckoutScreen = ({
     return (
       <SafeArea>
         <S.CartIconContainer>
-          <S.CartIcon icon="cart-off" />
+          <S.CartIcon icon="cart-off" bg="#2182bd" />
           <Text>Your cart is empty!</Text>
         </S.CartIconContainer>
       </SafeArea>

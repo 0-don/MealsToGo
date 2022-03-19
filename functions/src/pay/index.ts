@@ -7,15 +7,21 @@ export const payRequest = (
   stripeClient: Stripe
 ) => {
   const body = JSON.parse(request.body);
-  const { token, amount } = body;
-  console.error(token);
+  const { token, amount } = body as { token: string; amount: number };
+
   stripeClient.paymentIntents
     .create({
       amount,
       currency: "USD",
       payment_method_types: ["card"],
+      payment_method_data: {
+        type: "card",
+        card: {
+          token,
+        },
+      },
       confirm: true,
-    })
+    } as any)
     .then((paymentIntent) => {
       response.json(paymentIntent);
     })

@@ -13,9 +13,8 @@ export const CartIconContainer = styled.View`
   justify-content: center;
   flex: 1;
 `;
-export const CartIcon = styled(Avatar.Icon).attrs({
+export const CartIcon = styled(Avatar.Icon).attrs<{ bg: string }>({
   size: 128,
-  bg: "",
 })`
   ${({ theme, bg }: { bg: string; theme: ThemeType }) => css`
     background-color: ${bg || theme.colors.brand.primary};

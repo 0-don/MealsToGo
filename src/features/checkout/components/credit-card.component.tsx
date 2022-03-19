@@ -45,6 +45,7 @@ export const CreditCardInput = ({
     if (!isIncomplete) {
       try {
         const info = await cardTokenRequest(card);
+
         onSuccess(info);
       } catch (e) {
         onError();

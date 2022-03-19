@@ -5,7 +5,11 @@ import { Client } from "@googlemaps/google-maps-services-js";
 import Stripe from "stripe";
 import { payRequest } from "./pay";
 
-const stripeClient = new Stripe(functions.config().stripe.key, {
+const stripeKey = process.env.FUNCTIONS_EMULATOR
+  ? functions.config().stripe.test
+  : functions.config().stripe.live;
+
+const stripeClient = new Stripe(stripeKey, {
   apiVersion: "2020-08-27",
 });
 

@@ -20,7 +20,7 @@ export const CheckoutErrorScreen = ({ route }: Props): JSX.Element => {
   return (
     <SafeArea>
       <CartIconContainer>
-        <CartIcon icon="close" bg={theme.colors.ui.error} />
+        <CartIcon icon="close" bg="red" />
         <Text variant="label">{error}</Text>
       </CartIconContainer>
     </SafeArea>
