@@ -8,7 +8,6 @@
   <p align="center">
     Search for Restaurants in any Location
     <br />
-    <br />
     <img src="assets/mealstogo.webp" alt="Logo" width="200" >
     <br />
     <a href="#about-the-project"><strong>Explore the docs »</strong></a>
@@ -19,6 +18,7 @@
     <a href="https://github.com/Don-Cryptus/MealsToGo/issues">Report Bug</a>
     ·
     <a href="https://github.com/Don-Cryptus/MealsToGo/issues">Request Feature</a>
+
   </p>
 </p>
 
