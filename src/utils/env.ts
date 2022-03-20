@@ -1,8 +1,6 @@
-import { LIVEHOST, LOCALHOST, STRIPETEST, STRIPELIVE } from "@env";
+import { LIVEHOST, LOCALHOST, STRIPEPUBLICTEST, STRIPEPUBLICLIVE } from "@env";
 
 export const isDevelopment = Object.values(process.env).includes("development");
-export const liveHost = LIVEHOST;
-export const localHost = LOCALHOST;
-export const host = isDevelopment ? localHost : liveHost;
-export const stripeKey = isDevelopment ? STRIPETEST : STRIPELIVE;
+export const host = isDevelopment ? LOCALHOST : LIVEHOST;
+export const stripeKey = isDevelopment ? STRIPEPUBLICTEST : STRIPEPUBLICLIVE;
 export const isMock = isDevelopment;

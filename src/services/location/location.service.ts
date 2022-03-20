@@ -40,9 +40,10 @@ export type LocationProps = {
 export const locationRequest = async (
   searchTerm: string
 ): Promise<LocationReq> => {
-  return fetch(`${host}/geocode?city=${searchTerm}&mock=${isMock}`).then(
-    (res) => res.json()
-  );
+  console.log(searchTerm, host);
+  return fetch(`${host}/geocode?city=${searchTerm}&mock=${isMock}`)
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
 };
 
 export const locationTransform = (result: LocationReq) => {
