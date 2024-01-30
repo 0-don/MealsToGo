@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/Don-Cryptus/MealsToGo">
+  <a href="https://github.com/0-don/MealsToGo">
     <img src="assets/icon%403x.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -13,11 +13,11 @@
     <a href="#about-the-project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Don-Cryptus/MealsToGo/releases/latest">Try it out</a>
+    <a href="https://github.com/0-don/MealsToGo/releases/latest">Try it out</a>
     ·
-    <a href="https://github.com/Don-Cryptus/MealsToGo/issues">Report Bug</a>
+    <a href="https://github.com/0-don/MealsToGo/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Don-Cryptus/MealsToGo/issues">Request Feature</a>
+    <a href="https://github.com/0-don/MealsToGo/issues">Request Feature</a>
 
   </p>
 </p>
@@ -120,7 +120,7 @@ This project requires NodeJS (version 16 or later), Expo Cli, Yarn, Firebase Cli
 - Clone the repo
 
   ```sh
-  git clone https://github.com/Don-Cryptus/MealsToGo/ && cd MealsToGo && yarn && cd functions && yarn && cd..
+  git clone https://github.com/0-don/MealsToGo/ && cd MealsToGo && yarn && cd functions && yarn && cd..
   ```
 
 ### App Development
@@ -192,7 +192,7 @@ Download the app register & login and test out the app
 
 # Roadmap
 
-See the [open issues](https://github.com/Don-Cryptus/MealsToGo/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/0-don/MealsToGo/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -218,4 +218,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Your Email - don.cryptus@gmail.com
 
-Project Link: [https://github.com/Don-Cryptus/MealsToGo/](https://github.com/Don-Cryptus/echat/)
+Project Link: [https://github.com/0-don/MealsToGo/](https://github.com/0-don/echat/)
